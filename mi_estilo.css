@@ -1,0 +1,22 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+body{
+	background:#D1CCCB ;
+}
+
+#contenedor{
+	width: 900;
+	margin: auto;
+}
+
+header{
+	background: white;
+	height: 50px;
+}
+
+#redes{
+	float: right;
+}
