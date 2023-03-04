@@ -1,0 +1,29 @@
+@media (min-width: 701px) {
+
+    .perfil-image {
+        width: 80px;
+        height: 80px;
+        margin-top: -10px;
+        border: 2px solid #ddd;
+            }
+}
+
+@media (min-width: 481px) and (max-width: 700px) {
+
+    .perfil-image {
+        width: 60px;
+        height: 60px;
+        margin-top: -10px;
+        border: 2px solid #ddd;
+    }
+}
+
+@media (min-width: 250px) and (max-width: 480px) {
+
+    .perfil-image {
+        width: 10px;
+        height: 10px;
+        margin-top: -5px;
+        border: 2px solid #ddd;
+         }
+}
