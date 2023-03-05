@@ -6,21 +6,21 @@
 
 	"experiencia":[
 		{"posicion":"Jefe de Departamento de Infraestructura Informática ",
-		 "Empresa" : "Ente Nacional Regulador de la Electricidad",
+		 "empresa" : "Ente Nacional Regulador de la Electricidad",
 		 "modo" : "Jornada completa",
 		 "comienzo" : "2001",
 		 "final" : "actualidad"
 	    },
 
 		{"posicion":"Profesor Adjunto",
-		 "Empresa" : "Facultad de Ingeniería - UBA",
+		 "empresa" : "Facultad de Ingeniería - UBA",
 		 "modo" : "Jornada parcial",
 		 "comienzo" : "2017",
 		 "final" : "actualidad"
 	    },
 
 		{"posicion":"Jefe de Trabajos Prácticos",
-		 "Empresa" : "Facultad de Ingeniería - UBA",
+		 "empresa" : "Facultad de Ingeniería - UBA",
 		 "modo" : "Jornada parcial",
 		 "comienzo" : "2010",
 		 "final" : "2017"
