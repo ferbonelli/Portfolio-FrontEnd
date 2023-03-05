@@ -1,5 +1,28 @@
 {
 	"nombre": "Fernando Oscar Bonelli",
 	"profesion": "Ingeniero Electrónico",
-	"about": "Soy Ingeniero en Electrónica. Actualmente trabajo en el Ente Nacional Regulador de la Electricidad y como docente en la Facultad de Ingenieía de la UBA"
+	"acercade": "Soy Ingeniero en Electrónica. Actualmente trabajo en el Ente Nacional Regulador de la Electricidad y como docente en la Facultad de Ingenieía de la UBA",
+    "experiencia":[
+		{"posicion":"Jefe de Departamento de Infraestructura Informática ",
+		 "Empresa" : "Ente Nacional Regulador de la Electricidad",
+		 "modo" : "Jornada completa",
+		 "comienzo" : "2001",
+		 "final" : "actualidad"
+	    },
+
+		{"posicion":"Profesor Adjunto",
+		 "Empresa" : "Facultad de Ingeniería - UBA",
+		 "modo" : "Jornada parcial",
+		 "comienzo" : "2017",
+		 "final" : "actualidad"
+	    },
+
+		{"posicion":"Jefe de Trabajos Prácticos",
+		 "Empresa" : "Facultad de Ingeniería - UBA",
+		 "modo" : "Jornada parcial",
+		 "comienzo" : "2010",
+		 "final" : "2017"
+	    }
+	]
+
 }
