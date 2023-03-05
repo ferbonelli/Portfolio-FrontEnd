@@ -1,12 +1,18 @@
-<div class="card mat-card">
-    <div class="card-titles"> <h5>Experiencia</h5></div>
-    <div>
-        <ul>
-            <li *ngFor="let trabajos of experienciaList" >
-                {{trabajos.empresa}}
-                
+<div class="card mat-card contenedor">
+    <div class="card-titles"> <h5>Experiencia</h5><br></div>
+    <div class="w3-container">
+        <ul class="w3-ul w3-card-4 w3-col s8" >
+            <li *ngFor="let trabajos of experienciaList" class="w3-bar">
+                <img src="./assets/img/job.png" class="w3-bar-item w3-hide-small" style="width:60px">
+
+                <div class="w3-bar-item">
+                    <span ><h6>{{trabajos.empresa}}</h6></span><br>
+                    <span>{{trabajos.posicion}}</span><br>
+                    <span>{{trabajos.modo}}</span><br>
+                    <span>{{trabajos.final}} - {{trabajos.comienzo}}</span>
+                </div>
             </li>
          </ul>
-           
     </div>
+<br>
 </div>
