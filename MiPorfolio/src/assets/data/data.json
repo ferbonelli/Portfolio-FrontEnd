@@ -2,29 +2,53 @@
 	"nombre": "Fernando Oscar Bonelli",
 	"profesion": "Ingeniero Electrónico",
 	"acercade": "Soy Ingeniero en Electrónica. Actualmente trabajo en el Ente Nacional Regulador de la Electricidad y como docente en la Facultad de Ingenieía de la UBA",
-    
-
-	"experiencia":[
-		{"posicion":"Jefe de Departamento de Infraestructura Informática ",
-		 "empresa" : "Ente Nacional Regulador de la Electricidad",
-		 "modo" : "Jornada completa",
-		 "comienzo" : "2001",
-		 "final" : "actualidad"
-	    },
-
-		{"posicion":"Profesor Adjunto",
-		 "empresa" : "Facultad de Ingeniería - UBA",
-		 "modo" : "Jornada parcial",
-		 "comienzo" : "2017",
-		 "final" : "actualidad"
-	    },
-
-		{"posicion":"Jefe de Trabajos Prácticos",
-		 "empresa" : "Facultad de Ingeniería - UBA",
-		 "modo" : "Jornada parcial",
-		 "comienzo" : "2010",
-		 "final" : "2017"
-	    }
+	"experiencia": [
+		{
+			"posicion": "Jefe de Departamento de Infraestructura Informática ",
+			"empresa": "Ente Nacional Regulador de la Electricidad",
+			"modo": "Jornada completa",
+			"comienzo": "2001",
+			"final": "actualidad"
+		},
+		{
+			"posicion": "Profesor Adjunto",
+			"empresa": "Facultad de Ingeniería - UBA",
+			"modo": "Jornada parcial",
+			"comienzo": "2017",
+			"final": "actualidad"
+		},
+		{
+			"posicion": "Jefe de Trabajos Prácticos",
+			"empresa": "Facultad de Ingeniería - UBA",
+			"modo": "Jornada parcial",
+			"comienzo": "2010",
+			"final": "2017"
+		}
+	],
+	"habilidades": [
+		{
+			"nombre": "Asterisk",
+			"porcentaje": "100%"
+		},
+		{
+			"nombre": "Angular",
+			"porcentaje": "50%"
+		},
+		{
+			"nombre": "MySql",
+			"porcentaje": "65%"
+		},
+		{
+			"nombre": "HTML",
+			"porcentaje": "80%"
+		},
+		{
+			"nombre": "Javascript",
+			"porcentaje": "40%"
+		},
+		{
+			"nombre": "Typescript",
+			"porcentaje": "55%"
+		}
 	]
-
 }

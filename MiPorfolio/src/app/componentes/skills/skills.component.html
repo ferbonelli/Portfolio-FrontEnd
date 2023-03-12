@@ -4,63 +4,21 @@
 <br>
     <div class="row">
         
-        <div class="col-12 col-md-6 col-lg-3">
+        <div *ngFor="let habilidades of habilidadesList" class="col-12 col-md-6 col-lg-3">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Habilidad 1</h5>
-                    <p> Habilidad</p>
+                    <h5 class="card-title">{{habilidades.nombre}}</h5>
                     <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width:70%">
-                        70%
+                        <div class="progress-bar" role="progressbar" [style.width]="habilidades.porcentaje" >
+                        {{habilidades.porcentaje}}
                         </div>
                     </div>
+                    
                 </div>
             </div>    
         </div>
 
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Habilidad 2</h5>
-                    <p> Habilidad</p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width:70%">
-                        70%
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Habilidad 3</h5>
-                    <p> Habilidad</p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width:70%">
-                        70%
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </div>
-        
-        <div class="col-12 col-md-6 col-lg-3">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Habilidad 4</h5>
-                    <p> Habilidad</p>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width:70%">
-                        70%
-                        </div>
-                    </div>
-                </div>
-            </div>    
-        </div>
-
-       
+                            
 
       </div>
 
