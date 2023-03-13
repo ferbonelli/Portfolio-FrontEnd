@@ -28,27 +28,27 @@
 	"habilidades": [
 		{
 			"nombre": "Asterisk",
-			"porcentaje": "100%"
+			"porcentaje": "100"
 		},
 		{
 			"nombre": "Angular",
-			"porcentaje": "50%"
+			"porcentaje": "50"
 		},
 		{
 			"nombre": "MySql",
-			"porcentaje": "65%"
+			"porcentaje": "65"
 		},
 		{
 			"nombre": "HTML",
-			"porcentaje": "80%"
+			"porcentaje": "80"
 		},
 		{
 			"nombre": "Javascript",
-			"porcentaje": "40%"
+			"porcentaje": "40"
 		},
 		{
 			"nombre": "Typescript",
-			"porcentaje": "55%"
+			"porcentaje": "55"
 		}
 	]
 }
