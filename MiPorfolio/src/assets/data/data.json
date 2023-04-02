@@ -6,23 +6,41 @@
 		{
 			"posicion": "Jefe de Departamento de Infraestructura Informática ",
 			"empresa": "Ente Nacional Regulador de la Electricidad",
-			"modo": "Jornada completa",
 			"comienzo": "2001",
 			"final": "actualidad"
 		},
 		{
 			"posicion": "Profesor Adjunto",
 			"empresa": "Facultad de Ingeniería - UBA",
-			"modo": "Jornada parcial",
 			"comienzo": "2017",
 			"final": "actualidad"
 		},
 		{
 			"posicion": "Jefe de Trabajos Prácticos",
 			"empresa": "Facultad de Ingeniería - UBA",
-			"modo": "Jornada parcial",
 			"comienzo": "2010",
 			"final": "2017"
+		}
+	],
+
+	"educacion": [
+		{
+			"institucion": "Rectorado Universidad de Buenos Aires",
+			"titulo": "Magister en docencia universitaria",
+			"comienzo": "2014",
+			"final": "2018"
+		},
+		{
+			"institucion": "Intituto Superior de Ejercito Gral. Manuel Savio",
+			"titulo": "Especielista en Seguridad",
+			"comienzo": "2006",
+			"final": "2008"
+		},
+		{
+			"institucion": "Facultad de Ingeniería - UBA",
+			"titulo": "Ingeniería en Electrónica",
+			"comienzo": "1990",
+			"final": "2000"
 		}
 	],
 	"habilidades": [
