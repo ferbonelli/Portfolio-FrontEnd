@@ -68,5 +68,26 @@
 			"nombre": "Typescript",
 			"porcentaje": "55"
 		}
+	],
+
+	"proyectos": [
+		{
+			"nombre": "Mi portfolio",
+			"descripcion": "Desarrollo de mi portfolio en página web",
+			"comienzo": "2022",
+			"final": "Actualidad"
+		},
+		{
+			"nombre": "Migrar centrales a Asterisk",
+			"descripcion": "Reemplazar las centrales del convencionales por centrales con Asteris",
+			"comienzo": "2018",
+			"final": "2020"
+		},
+		{
+			"nombre": "Virtualización de centrales del 0800",
+			"descripcion": "Virtualización d elas centrales físicas que atienden al 0800",
+			"comienzo": "2017",
+			"final": "2018"
+		}
 	]
 }
