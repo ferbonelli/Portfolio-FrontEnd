@@ -1,5 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from 'src/app/servicios/login.service';
 
 @Component({
   selector: 'app-encabezado',
@@ -8,9 +9,20 @@ import { Router } from '@angular/router';
 })
 export class EncabezadoComponent implements OnInit{
 
-  constructor(private ruta:Router){}
+  logindatos:any;
 
-  ngOnInit(): void {}
+  constructor(private datosLogin: LoginService,
+              private ruta:Router
+               ){}
+
+  ngOnInit(): void {
+    this.datosLogin.obtenerCredenciales().subscribe(
+      data => {
+        this.logindatos = data;
+        console.log(this.logindatos[0].estadologin);
+                
+    });
+  }
 
   onClick() {
     this.ruta.navigate(['/login'])
