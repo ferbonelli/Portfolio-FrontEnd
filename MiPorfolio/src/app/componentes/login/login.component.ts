@@ -7,6 +7,10 @@ import { LoginService } from 'src/app/servicios/login.service';
 })
 export class LoginComponent {
 
+  nombre: string = '';
+  telefono = '';
+  dni = '';
+
   logindatos:any;
   
   constructor(private datosLogin: LoginService) { }
