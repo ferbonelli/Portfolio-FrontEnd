@@ -1,10 +1,25 @@
-<div class="container mt-3">
-    <h2>Iniciar sesión</h2>
+<div>
+  <div>
+    <div>
+      Usuario:
+      <input 
+        placeholder="Ingrese usuario" 
+        type="text" 
+        [(ngModel)]="usuario" />
+    </div>
+    <br />
+    <div>
+      Contraseña:
+      <input
+        placeholder="ingrese contraseña"
+        type="text"
+        [(ngModel)]="clave"
+      />
+    </div>
+    <br />
+    
+    <button type="button" class="btn btn-primary" (click)="onClick()">Iniciar sesión</button>
+        
+</div>
 
-    
-    
-      <button type="submit" class="btn btn-primary">Iniciar sesión</button>
-  
-    
-  </div>
   

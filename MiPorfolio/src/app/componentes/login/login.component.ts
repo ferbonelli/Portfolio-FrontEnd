@@ -7,9 +7,9 @@ import { LoginService } from 'src/app/servicios/login.service';
 })
 export class LoginComponent {
 
-  nombre: string = '';
-  telefono = '';
-  dni = '';
+  usuario: string = '';
+  clave: string = '';
+
 
   logindatos:any;
   
@@ -23,5 +23,15 @@ export class LoginComponent {
         console.log(this.logindatos[0].username);
                 
     });
+  }
+
+  onClick() {
+    if (this.clave==="guazupeje" && this.usuario==="bonelli.fernando@gmail.com")
+    {
+      alert('Ingreso correcto');
+    }
+    else {
+        alert('Ingreso incorrecto');
+    }
   }
 }
