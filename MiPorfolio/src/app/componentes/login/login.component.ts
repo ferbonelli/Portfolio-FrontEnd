@@ -29,9 +29,22 @@ export class LoginComponent implements OnInit {
     if (this.clave===this.logindatos[0].password && this.usuario===this.logindatos[0].username)
     {
       alert('Ingreso correcto');
+      this.datosLogin.cambiarVerdadero().subscribe(
+        data1 => {
+          this.logindatos = data1;
+          console.log(this.logindatos[0].estadologin);
+                  
+      });
+
     }
     else {
         alert('Ingreso incorrecto');
+        this.datosLogin.cambiarFalso().subscribe(
+          data2 => {
+            this.logindatos = data2;
+            console.log(this.logindatos[0].estadologin);
+                    
+        });
     }
   }
 }
