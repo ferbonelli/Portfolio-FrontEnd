@@ -11,6 +11,8 @@ import { SkillsComponent } from './componentes/skills/skills.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { BannerComponent } from './componentes/banner/banner.component';
 import { HttpClientModule} from '@angular/common/http';
+import { LoginComponent } from './componentes/login/login.component';
+import { MiportfolioComponent } from './componentes/miportfolio/miportfolio.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { HttpClientModule} from '@angular/common/http';
     EducacionComponent,
     SkillsComponent,
     ProyectosComponent,
-    BannerComponent
+    BannerComponent,
+    LoginComponent,
+    MiportfolioComponent
   ],
   imports: [
     BrowserModule,
