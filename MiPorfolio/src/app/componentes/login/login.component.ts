@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   }
 
   onClick() {
-    if (this.clave==="guazupeje" && this.usuario==="bonelli.fernando@gmail.com")
+    if (this.clave===this.logindatos[0].password && this.usuario===this.logindatos[0].username)
     {
       alert('Ingreso correcto');
     }
