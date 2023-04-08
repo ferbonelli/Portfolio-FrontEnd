@@ -16,6 +16,7 @@ ngOnInit(): void {
   this.datosPorfolio.obtenerDatos().subscribe(
     data => {console.log(data);
       this.miPortfolio=data;
+      console.log(this.miPortfolio.nombre)
           
   });
 }
