@@ -10,6 +10,7 @@ import { LoginService } from 'src/app/servicios/login.service';
 export class EncabezadoComponent implements OnInit{
 
   logindatos:any;
+  
 
   constructor(private datosLogin: LoginService,
               private ruta:Router
@@ -22,10 +23,13 @@ export class EncabezadoComponent implements OnInit{
         console.log(this.logindatos[0].estadologin);
                 
     });
+    
   }
 
   onClick() {
-    this.ruta.navigate(['/login'])
+    this.ruta.navigate(['/login']);
+    
+    
   }
 
   logout(){
@@ -37,13 +41,8 @@ export class EncabezadoComponent implements OnInit{
                        
     });
     
-    
-    //this.ngOnInit();
-  
-    //this.ruta.navigateByUrl('/EncabezadoComponent', {skipLocationChange: true})
-    //.then(()=> this.ruta.navigate(['/portfolio']));
-
-    
+    window.location.reload();
+         
   }
 
 

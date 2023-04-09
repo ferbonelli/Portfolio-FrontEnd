@@ -37,17 +37,13 @@ export class LoginComponent implements OnInit {
           console.log(this.logindatos[0].estadologin);
                   
       });
-      this.ruta.navigate(['/portfolio'])
+      this.ruta.navigate(['/portfolio']);
 
     }
     else {
         alert('Ingreso incorrecto');
-        this.datosLogin.cambiarFalso().subscribe(
-          data2 => {
-            this.logindatos = data2;
-            console.log(this.logindatos[0].estadologin);
-                    
-        });
+        this.ruta.navigate(['/portfolio']);
+        
     }
   }
 }
