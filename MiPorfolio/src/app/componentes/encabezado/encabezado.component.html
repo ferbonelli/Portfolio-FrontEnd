@@ -13,6 +13,10 @@
       <button type="button" class="btn btn-primary" (click)="onClick()" >Iniciar sesión</button>
        </li>
 
+       <li class="nav-item">
+        <button type="button" class="btn btn-primary" (click)="logout()" >Cerrar sesión</button>
+         </li>
+
       <!-- Links -->
       <li class="nav-item">
         <a class="nav-link" href="https://www.linkedin.com/in/fernando-oscar-bonelli-0969811b/"><img src="./assets/img/linkedin.png" width="15px" height="15px" ></a>
@@ -27,6 +31,6 @@
   </div>
 
 </nav>
-<p *ngIf="logindatos[0].estadologin">{{logindatos[0].estadologin}}</p>
+<p *ngIf="logindatos[0].estadologin" >{{logindatos[0].estadologin}}</p>
  
   

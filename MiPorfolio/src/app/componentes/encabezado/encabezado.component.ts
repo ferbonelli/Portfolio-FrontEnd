@@ -28,5 +28,23 @@ export class EncabezadoComponent implements OnInit{
     this.ruta.navigate(['/login'])
   }
 
+  logout(){
+    this.datosLogin.cambiarFalso().subscribe(
+      data2 => {
+        this.logindatos = data2;
+        console.log(data2);
+        console.log(this.logindatos[0].estadologin);
+                       
+    });
+    
+    
+    //this.ngOnInit();
+  
+    //this.ruta.navigateByUrl('/EncabezadoComponent', {skipLocationChange: true})
+    //.then(()=> this.ruta.navigate(['/portfolio']));
+
+    
+  }
+
 
 }
