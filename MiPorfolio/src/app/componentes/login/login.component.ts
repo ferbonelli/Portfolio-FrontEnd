@@ -38,6 +38,8 @@ export class LoginComponent implements OnInit {
                   
       });
       this.ruta.navigate(['/portfolio']);
+      
+
 
     }
     else {

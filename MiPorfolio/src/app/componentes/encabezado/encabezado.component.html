@@ -9,13 +9,17 @@
     <ul class="navbar-nav">
 
       <!-- Iniciar sesión -->
-      <li class="nav-item">
-      <button type="button" class="btn btn-primary" (click)="onClick()" >Iniciar sesión</button>
+      <li *ngIf="logindatos[0].estadologin, else elseBlock" class="nav-item">
+      <button type="button" class="btn btn-primary" (click)="logout()" >Cerrar sesión</button>
        </li>
 
-       <li class="nav-item">
-        <button type="button" class="btn btn-primary" (click)="logout()" >Cerrar sesión</button>
-         </li>
+       <ng-template #elseBlock>
+        <li class="nav-item">
+          <button type="button" class="btn btn-primary" (click)="onClick()" >Iniciar sesión</button>
+           </li>
+       </ng-template>
+
+       
 
       <!-- Links -->
       <li class="nav-item">
@@ -31,6 +35,5 @@
   </div>
 
 </nav>
-<p *ngIf="logindatos[0].estadologin" >{{logindatos[0].estadologin}}</p>
  
   

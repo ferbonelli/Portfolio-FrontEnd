@@ -28,8 +28,8 @@ export class EncabezadoComponent implements OnInit{
 
   onClick() {
     this.ruta.navigate(['/login']);
-    
-    
+    this.ngOnInit();
+       
   }
 
   logout(){
