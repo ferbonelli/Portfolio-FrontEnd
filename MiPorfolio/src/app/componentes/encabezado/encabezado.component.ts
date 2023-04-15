@@ -10,6 +10,7 @@ import { LoginService } from 'src/app/servicios/login.service';
 export class EncabezadoComponent implements OnInit{
 
   logindatos:any;
+  estadologin: boolean = false;
   
 
   constructor(private datosLogin: LoginService,
@@ -20,29 +21,18 @@ export class EncabezadoComponent implements OnInit{
     this.datosLogin.obtenerCredenciales().subscribe(
       data => {
         this.logindatos = data;
-        console.log(this.logindatos[0].estadologin);
+        console.log(this.logindatos);
                 
     });
     
   }
 
-  onClick() {
-    this.ruta.navigate(['/login']);
-    this.ngOnInit();
-       
+  onlogin() {
+    this.ruta.navigate(['/login']);       
   }
 
-  logout(){
-    this.datosLogin.cambiarFalso().subscribe(
-      data2 => {
-        this.logindatos = data2;
-        console.log(data2);
-        console.log(this.logindatos[0].estadologin);
-                       
-    });
-    
-    window.location.reload();
-         
+  onlogout(){
+            
   }
 
 

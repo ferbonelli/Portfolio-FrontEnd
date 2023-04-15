@@ -22,30 +22,20 @@ export class LoginComponent implements OnInit {
     this.datosLogin.obtenerCredenciales().subscribe(
       data => {
         this.logindatos = data;
-        console.log(this.logindatos);
-        console.log(this.logindatos[0].username);
-                
+        console.log("ESte es el usuario recuperado:"+ this.logindatos);
+                        
     });
   }
 
   onClick() {
     if (this.clave===this.logindatos[0].password && this.usuario===this.logindatos[0].username)
     {
-      this.datosLogin.cambiarVerdadero().subscribe(
-        data1 => {
-          this.logindatos = data1;
-          console.log(this.logindatos[0].estadologin);
-                  
-      });
+      alert('Te logueaste correctamente');
       this.ruta.navigate(['/portfolio']);
-      
-
-
-    }
+          }
     else {
         alert('Ingreso incorrecto');
         this.ruta.navigate(['/portfolio']);
-        
-    }
+         }
   }
 }

@@ -9,13 +9,13 @@
     <ul class="navbar-nav">
 
       <!-- Iniciar sesión -->
-      <li *ngIf="logindatos[0].estadologin, else elseBlock" class="nav-item">
-      <button type="button" class="btn btn-primary" (click)="logout()" >Cerrar sesión</button>
+      <li *ngIf="estadologin, else elseBlock" class="nav-item">
+      <button type="button" class="btn btn-primary" (click)="onlogout()" >Cerrar sesión</button>
        </li>
 
        <ng-template #elseBlock>
         <li class="nav-item">
-          <button type="button" class="btn btn-primary" (click)="onClick()" >Iniciar sesión</button>
+          <button type="button" class="btn btn-primary" (click)="onlogin()" >Iniciar sesión</button>
            </li>
        </ng-template>
 
