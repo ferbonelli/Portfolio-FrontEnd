@@ -16,6 +16,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { MiportfolioComponent } from './componentes/miportfolio/miportfolio.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { MiportfolioComponent } from './componentes/miportfolio/miportfolio.comp
     ProyectosComponent,
     BannerComponent,
     LoginComponent,
-    MiportfolioComponent
+    MiportfolioComponent,
+  
   ],
   imports: [
     BrowserModule,
