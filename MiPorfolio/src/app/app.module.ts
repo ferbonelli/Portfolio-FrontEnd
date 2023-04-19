@@ -14,6 +14,7 @@ import { BannerComponent } from './componentes/banner/banner.component';
 import { HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './componentes/login/login.component';
 import { MiportfolioComponent } from './componentes/miportfolio/miportfolio.component';
+import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 
 
 
@@ -29,6 +30,7 @@ import { MiportfolioComponent } from './componentes/miportfolio/miportfolio.comp
     BannerComponent,
     LoginComponent,
     MiportfolioComponent,
+    HabilidadesComponent,
   
   ],
   imports: [
