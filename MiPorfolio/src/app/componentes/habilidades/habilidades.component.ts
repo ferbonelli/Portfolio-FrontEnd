@@ -12,26 +12,39 @@ import { HabilidadService } from 'src/app/servicios/habilidad.service';
 })
 export class HabilidadesComponent {
 
-  habilidadesList:any;
-  habilidadesArray: Habilidad[] = []; 
+  habilidadesArray: Habilidad[] = [];
+  estadologin: string = 'no_logueado';
+  logueado: boolean = false; 
 
   constructor(private datosPorfolio:PortfolioService,
               private datosHabilidad:HabilidadService
     ) {}
 
   ngOnInit(): void {
-    this.datosPorfolio.obtenerDatos().subscribe(data=>
-      {this.habilidadesList = data.habilidades;});
+    this.mostrarHabilidades();
+    const estado = localStorage.getItem("estado_login");
+    
+    if (estado) {
+        this.estadologin = estado;
+                    }
+    
+    if (this.estadologin=== 'logueado' )
+    {
+      this.logueado=true;
+          }
+            else {this.logueado=false};
+    
+   
+  }
 
-      // Recupero desde la api
-      this.datosHabilidad.obtenerHabilidad().subscribe(
-        datah => {
-          this.habilidadesArray = datah;
-          console.log("Esta es la habilidad recuperada:");
-          console.log(this.habilidadesArray)
-                          
-      });
-
-}
+  mostrarHabilidades(): void {
+    this.datosHabilidad.obtenerHabilidad().subscribe(
+      datah => {
+        this.habilidadesArray = datah;
+        console.log("Esta es la habilidad recuperada:");
+        console.log(this.habilidadesArray)
+                        
+    });
+  }
 
 }

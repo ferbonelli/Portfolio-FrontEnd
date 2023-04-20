@@ -16,6 +16,6 @@ export class HabilidadService {
   // Métodos de acceso a la api
 
   obtenerHabilidad():Observable<Habilidad[]>{
-    return this.http.get<Habilidad[]>(this.url + 'ver/habilidad');
+    return this.http.get<Habilidad[]>(this.url + 'habilidad');
     };
 }
