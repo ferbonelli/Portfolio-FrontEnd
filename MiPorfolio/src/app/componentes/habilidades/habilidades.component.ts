@@ -13,8 +13,8 @@ import { HabilidadService } from 'src/app/servicios/habilidad.service';
 export class HabilidadesComponent {
 
   habilidadesArray: Habilidad[] = [];
-  estadologin: string = 'no_logueado';
-  logueado: boolean = false; 
+  
+  esta_logueado: boolean = false;
 
   constructor(private datosPorfolio:PortfolioService,
               private datosHabilidad:HabilidadService
@@ -22,18 +22,15 @@ export class HabilidadesComponent {
 
   ngOnInit(): void {
     this.mostrarHabilidades();
-    const estado = localStorage.getItem("estado_login");
-    
-    if (estado) {
-        this.estadologin = estado;
-                    }
-    
-    if (this.estadologin=== 'logueado' )
-    {
-      this.logueado=true;
+    if (localStorage.getItem("estado_login"))
+        {
+          this.esta_logueado=true;
+        }
+        else
+          {
+           this.esta_logueado=false;
           }
-            else {this.logueado=false};
-    
+   
    
   }
 

@@ -10,8 +10,7 @@ import { LoginService } from 'src/app/servicios/login.service';
 export class EncabezadoComponent implements OnInit{
 
   logindatos:any;
-  estadologin: string = 'no_logueado';
-  logueado: boolean = false;
+  esta_logueado: boolean = false;
   
 
   constructor(private datosLogin: LoginService,
@@ -19,23 +18,16 @@ export class EncabezadoComponent implements OnInit{
                ){}
 
   ngOnInit(): void {
-    const estado = localStorage.getItem("estado_login");
-    
-    if (estado) {
-        this.estadologin = estado;
-        console.log('Estado del login en encabezado:');
-          console.log(this.estadologin);
-            }
-    
-    if (this.estadologin=== 'logueado' )
-    {
-      this.logueado=true;
-      console.log('DEL if:');
-      console.log(this.logueado);
 
-    }
-            else {this.logueado=false};
-
+    if (localStorage.getItem("estado_login"))
+        {
+          this.esta_logueado=true;
+        }
+        else
+          {
+           this.esta_logueado=false;
+          }
+   
   }
        
 
@@ -45,7 +37,8 @@ export class EncabezadoComponent implements OnInit{
   }
 
   onlogout(){
-    localStorage.setItem('estado_login','no_logueado');
+    //localStorage.setItem('estado_login','no_logueado');
+    localStorage.removeItem('estado_login')
     console.log('tiene que cerrar');
     window.location.reload();
 
