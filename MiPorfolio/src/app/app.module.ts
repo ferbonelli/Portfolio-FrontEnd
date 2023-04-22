@@ -10,13 +10,14 @@ import { EncabezadoComponent } from './componentes/encabezado/encabezado.compone
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { ExperienciaComponent } from './componentes/experiencia/experiencia.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
-import { SkillsComponent } from './componentes/skills/skills.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { BannerComponent } from './componentes/banner/banner.component';
 import { HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './componentes/login/login.component';
 import { MiportfolioComponent } from './componentes/miportfolio/miportfolio.component';
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
+import { NuevahabilidadComponent } from './componentes/habilidades/nuevahabilidad.component';
+import { EditarhabilidadComponent } from './componentes/habilidades/editarhabilidad.component';
 
 
 
@@ -27,12 +28,13 @@ import { HabilidadesComponent } from './componentes/habilidades/habilidades.comp
     AcercaDeComponent,
     ExperienciaComponent,
     EducacionComponent,
-    SkillsComponent,
     ProyectosComponent,
     BannerComponent,
     LoginComponent,
     MiportfolioComponent,
     HabilidadesComponent,
+    NuevahabilidadComponent,
+    EditarhabilidadComponent,
   
   
   ],

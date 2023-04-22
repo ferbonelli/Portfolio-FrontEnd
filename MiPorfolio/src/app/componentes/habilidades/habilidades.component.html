@@ -2,8 +2,8 @@
     
     <h5>Habilidades</h5>
           
-    <button type="button" class="btn btn-primary" *ngIf="esta_logueado" >Agregar habilidad</button>
-<br>
+    <button type="button" class="btn btn-primary" routerLink="/nuevahabilidad" *ngIf="esta_logueado" >Agregar habilidad</button>
+<br><br>
 
       <!-- Muestro la lista de habilidades-->  
 
@@ -14,8 +14,8 @@
                 <div class="card-body">
                     
                     <div><span><h5>{{habilidades.nombre}}</h5></span>
-                    <span><fa-icon [icon]="faPen"></fa-icon></span>&nbsp;
-                    <span><fa-icon [icon]="faTrashCan"></fa-icon></span>
+                    <span *ngIf="esta_logueado"><a routerLink="/editarhabilidad"><fa-icon [icon]="faPen"></fa-icon></a></span>&nbsp;
+                    <span *ngIf="esta_logueado"><fa-icon [icon]="faTrashCan"></fa-icon></span>
                     </div>
                     
                     
