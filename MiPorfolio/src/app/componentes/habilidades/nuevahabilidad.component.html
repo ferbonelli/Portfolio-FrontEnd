@@ -1,1 +1,24 @@
-<p>nuevahabilidad works!</p>
+<div>
+
+    <h5>Alta de habilidad</h5>
+    <div>
+      Nueva habilidad:
+      <input 
+        placeholder="Ingrese nueva habilidad" 
+        type="text" 
+        [(ngModel)]="nombre" />
+    </div>
+    <br />
+    <div>
+      Porcentaje:
+      <input
+        placeholder="ingrese porcentaje"
+        type="number"
+        [(ngModel)]="porcentaje"
+      />
+    </div>
+    <br />
+    
+    <button type="button" class="btn btn-primary" (click)="onCreate()">Grabar Habilidad</button>
+        
+</div>

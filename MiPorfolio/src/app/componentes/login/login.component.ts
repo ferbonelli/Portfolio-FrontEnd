@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LocalStorageService } from 'src/app/servicios/local-storage.service';
 import { LoginService } from 'src/app/servicios/login.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,7 +18,6 @@ export class LoginComponent implements OnInit {
   
   constructor(private datosLogin: LoginService,
               private ruta:Router,
-              private estado_login:LocalStorageService
               ) { }
 
   ngOnInit(): void {

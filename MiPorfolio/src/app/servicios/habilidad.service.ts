@@ -9,13 +9,24 @@ import { Habilidad } from '../model/habilidad.model';
 export class HabilidadService {
 
   url:string="http://localhost:8080/";
+  httpOptions = {
+    headers : ({'Content-Type': 'application/json'})
+    };
 
 
   constructor(private http:HttpClient) { }
 
   // Métodos de acceso a la api
 
-  obtenerHabilidad():Observable<Habilidad[]>{
+  public obtenerHabilidad():Observable<Habilidad[]>{
     return this.http.get<Habilidad[]>(this.url + 'habilidad');
     };
+
+  public agregarHabilidad(nuevaHabilidad: Habilidad):Observable<any>{
+    console.log(JSON.stringify(nuevaHabilidad));
+       
+    return this.http.post<any>(this.url + 'habilidad', JSON.stringify(nuevaHabilidad),this.httpOptions);
+  
+  }
+
 }

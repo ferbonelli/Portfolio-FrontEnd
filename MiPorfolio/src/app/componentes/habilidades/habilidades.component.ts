@@ -12,7 +12,7 @@ import { HabilidadService } from 'src/app/servicios/habilidad.service';
   templateUrl: './habilidades.component.html',
   styleUrls: ['./habilidades.component.css']
 })
-export class HabilidadesComponent {
+export class HabilidadesComponent implements OnInit {
 
   // Declaraciones
   habilidadesArray: Habilidad[] = [];
