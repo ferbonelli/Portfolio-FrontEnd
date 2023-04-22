@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Habilidad } from 'src/app/model/habilidad.model';
+import { faPen } from '@fortawesome/free-solid-svg-icons';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 // Importo servicios
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
@@ -12,9 +14,11 @@ import { HabilidadService } from 'src/app/servicios/habilidad.service';
 })
 export class HabilidadesComponent {
 
+  // Declaraciones
   habilidadesArray: Habilidad[] = [];
-  
   esta_logueado: boolean = false;
+  faPen=faPen;
+  faTrashCan=faTrashCan;
 
   constructor(private datosPorfolio:PortfolioService,
               private datosHabilidad:HabilidadService

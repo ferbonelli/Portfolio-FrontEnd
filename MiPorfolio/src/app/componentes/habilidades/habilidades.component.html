@@ -1,6 +1,8 @@
 <div class="contenedorskill">
+    
     <h5>Habilidades</h5>
-    <button type="button" class="btn btn-primary" *ngIf="esta_logueado" >Agregar</button>
+          
+    <button type="button" class="btn btn-primary" *ngIf="esta_logueado" >Agregar habilidad</button>
 <br>
 
       <!-- Muestro la lista de habilidades-->  
@@ -10,7 +12,13 @@
         <div *ngFor="let habilidades of habilidadesArray" class="col-12 col-md-6 col-lg-3">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{{habilidades.nombre}}</h5>
+                    
+                    <div><span><h5>{{habilidades.nombre}}</h5></span>
+                    <span><fa-icon [icon]="faPen"></fa-icon></span>&nbsp;
+                    <span><fa-icon [icon]="faTrashCan"></fa-icon></span>
+                    </div>
+                    
+                    
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" [style.width.%]="habilidades.porcentaje" >
                         {{habilidades.porcentaje}}%
