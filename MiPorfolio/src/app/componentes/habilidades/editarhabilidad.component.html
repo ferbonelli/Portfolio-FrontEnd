@@ -1,1 +1,23 @@
-<p>editarhabilidad works!</p>
+<div>
+
+    <h5>Edición de habilidad</h5>
+    <div>
+      Editar habilidad:
+      <input 
+        type="text" 
+        [(ngModel)]="habilidadEditar.nombre" />
+    </div>
+    <br />
+    <div>
+      Editar Porcentaje:
+      <input
+        type="number"
+        [(ngModel)]="habilidadEditar.porcentaje"
+      />
+    </div>
+    <br />
+    
+    <button type="button" class="btn btn-primary" (click)="onUpdate()">Actualizar Habilidad</button>
+        
+</div>
+

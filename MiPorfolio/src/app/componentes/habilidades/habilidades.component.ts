@@ -4,7 +4,6 @@ import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 // Importo servicios
-import { PortfolioService } from 'src/app/servicios/portfolio.service';
 import { HabilidadService } from 'src/app/servicios/habilidad.service';
 
 @Component({
@@ -20,7 +19,7 @@ export class HabilidadesComponent implements OnInit {
   faPen=faPen;
   faTrashCan=faTrashCan;
 
-  constructor(private datosPorfolio:PortfolioService,
+  constructor(
               private datosHabilidad:HabilidadService
     ) {}
 
@@ -39,7 +38,7 @@ export class HabilidadesComponent implements OnInit {
   }
 
   mostrarHabilidades(): void {
-    this.datosHabilidad.obtenerHabilidad().subscribe(
+    this.datosHabilidad.obtenerHabilidades().subscribe(
       datah => {
         this.habilidadesArray = datah;
         console.log("Esta es la habilidad recuperada:");

@@ -9,7 +9,7 @@ const routes: Routes = [
 {path:'portfolio', component:MiportfolioComponent},
 {path:'login', component:LoginComponent},
 {path:'nuevahabilidad', component:NuevahabilidadComponent},
-{path:'editarhabilidad', component:EditarhabilidadComponent},
+{path:'editarhabilidad/:id', component:EditarhabilidadComponent},
 {path:'', component:MiportfolioComponent,pathMatch: 'full'},
 ];
 
