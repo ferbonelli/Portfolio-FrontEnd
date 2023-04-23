@@ -47,4 +47,22 @@ export class HabilidadesComponent implements OnInit {
     });
   }
 
+  onDelete(id?: number){
+    console.log(id);
+
+    if(id != undefined){
+
+      this.datosHabilidad.borrarHabilidad(id).subscribe(
+        data => {
+          alert("Se borró la habilidad correctamente")
+          this.mostrarHabilidades();
+        }, err => {
+          alert("No se pudo borrar la habilidad");
+        }
+      )
+    }
+
+          
+  }
+
 }

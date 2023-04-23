@@ -14,8 +14,9 @@
                 <div class="card-body">
                     
                     <div><span><h5>{{habilidades.nombre}}</h5></span>
-                    <span *ngIf="esta_logueado"><a routerLink="/editarhabilidad/{{habilidades.id_habilidad}}"><fa-icon [icon]="faPen"></fa-icon></a></span>&nbsp;
-                    <span *ngIf="esta_logueado"><fa-icon [icon]="faTrashCan"></fa-icon></span>
+                    <span *ngIf="esta_logueado"><a routerLink="/editarhabilidad/{{habilidades.id_habilidad}}">
+                        <fa-icon [icon]="faPen"></fa-icon></a></span>&nbsp;
+                    <span *ngIf="esta_logueado"><fa-icon [icon]="faTrashCan" (click)="onDelete(habilidades.id_habilidad)"></fa-icon></span>
                     </div>
                     
                     

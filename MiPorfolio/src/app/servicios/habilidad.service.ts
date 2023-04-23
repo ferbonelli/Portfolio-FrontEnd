@@ -32,8 +32,14 @@ export class HabilidadService {
       return this.http.get<Habilidad>(this.url + `habilidad/${id}`);
       };
 
-      public actualizarHabilidad(habilidadActualizar:Habilidad):Observable<Habilidad>{
+
+    public actualizarHabilidad(habilidadActualizar:Habilidad):Observable<Habilidad>{
         return this.http.put<Habilidad>(this.url + 'habilidad',habilidadActualizar);
         };
+
+    
+    public borrarHabilidad(id: number):Observable<Habilidad>{
+      return this.http.delete<Habilidad>(this.url + `habilidad/${id}`);
+    }
 
 }
