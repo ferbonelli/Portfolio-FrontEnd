@@ -41,15 +41,12 @@ export class HabilidadesComponent implements OnInit {
     this.datosHabilidad.obtenerHabilidades().subscribe(
       datah => {
         this.habilidadesArray = datah;
-        console.log("Esta es la habilidad recuperada:");
-        console.log(this.habilidadesArray)
-                        
+                                
     });
   }
 
   onDelete(id?: number){
-    console.log(id);
-
+    
     if(id != undefined){
 
       this.datosHabilidad.borrarHabilidad(id).subscribe(

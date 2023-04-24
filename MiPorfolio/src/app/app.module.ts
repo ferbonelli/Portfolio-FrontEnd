@@ -18,6 +18,8 @@ import { MiportfolioComponent } from './componentes/miportfolio/miportfolio.comp
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 import { NuevahabilidadComponent } from './componentes/habilidades/nuevahabilidad.component';
 import { EditarhabilidadComponent } from './componentes/habilidades/editarhabilidad.component';
+import { EditarproyectoComponent } from './componentes/proyectos/editarproyecto.component';
+import { NuevoproyectoComponent } from './componentes/proyectos/nuevoproyecto.component';
 
 
 
@@ -35,6 +37,8 @@ import { EditarhabilidadComponent } from './componentes/habilidades/editarhabili
     HabilidadesComponent,
     NuevahabilidadComponent,
     EditarhabilidadComponent,
+    EditarproyectoComponent,
+    NuevoproyectoComponent,
   
   
   ],

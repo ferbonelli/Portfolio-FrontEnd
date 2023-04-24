@@ -1,15 +1,23 @@
 <div class="card mat-card contenedor">
     <div class="card-body">
         <h5 class="card-titles">Proyectos</h5><br>
+
+        <button type="button" class="btn btn-primary" routerLink="/nuevoproyecto" *ngIf="esta_logueado" >Agregar Proyecto</button>
+        <br><br>
+
         <div class="w3-container">
             <ul class="w3-ul w3-card-4 w3-col s8" >
-                <li *ngFor="let proyecto of proyectosList" class="w3-bar">
+                <li *ngFor="let proyecto of proyectosArray" class="w3-bar">
                     <img src="./assets/img/proyecto.png" class="w3-bar-item w3-hide-small" style="width:60px">
 
                     <div class="w3-bar-item">
-                        <span ><h6>{{proyecto.nombre}}</h6></span><br>
+                        <span ><h6>{{proyecto.nombre}}</h6></span>
+                        <span *ngIf="esta_logueado"><a routerLink="/editarproyecto/{{proyecto.id_proyecto}}">
+                            <fa-icon [icon]="faPen"></fa-icon></a></span>&nbsp;
+                        <span *ngIf="esta_logueado"><fa-icon [icon]="faTrashCan" (click)="onDelete(proyecto.id_proyecto)"></fa-icon></span>
+                        <br>
                         <span>{{proyecto.descripcion}}</span><br>
-                        <span>{{proyecto.final}} - {{proyecto.comienzo}}</span>
+                        <span>{{proyecto.fecha_final}} - {{proyecto.fecha_inicio}}</span>
                     </div>
                 </li>
             </ul>
