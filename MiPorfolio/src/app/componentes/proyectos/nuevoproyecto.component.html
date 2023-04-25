@@ -1,1 +1,48 @@
-<p>nuevoproyecto works!</p>
+<div>
+
+    <h5>Alta de Proyecto</h5>
+    <div>
+      Nuevo proyecto:
+      <input 
+        placeholder="Ingrese nuevo proyecto" 
+        type="text" 
+        [(ngModel)]="nombre" />
+    </div>
+    <br />
+    <div>
+        Descripción del proyecto:
+        <input 
+          placeholder="Ingrese descripción del proyecto" 
+          type="text" 
+          [(ngModel)]="descripcion" />
+      </div>
+      <br />
+      <div>
+        Fecha de inicio:
+        <input 
+          placeholder="Ingrese la fecha de inicio proyecto" 
+          type="text" 
+          [(ngModel)]="fecha_inicio" />
+      </div>
+      <br />
+      <div>
+        Fecha de final:
+        <input 
+          placeholder="Ingrese la fecha finalización del proyecto" 
+          type="text" 
+          [(ngModel)]="fecha_final" />
+      </div>
+      <br />
+      <div>
+        Imagen:
+        <input 
+          placeholder="Ingrese la url_de la imagen" 
+          type="text" 
+          [(ngModel)]="url_proyecto" />
+      </div>
+      <br />
+    
+    
+    <button type="button" class="btn btn-primary" (click)="onCreate()">Grabar Proyecto</button>
+        
+</div>

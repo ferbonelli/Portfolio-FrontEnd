@@ -50,10 +50,10 @@ onDelete(id?: number){
 
     this.datosProyecto.borrarProyecto(id).subscribe(
       data => {
-        alert("Se borró la habilidad correctamente")
+        alert("Se borró el proyecto correctamente")
         this.mostrarProyectos();
       }, err => {
-        alert("No se pudo borrar la habilidad");
+        alert("No se pudo borrar el proyecto");
       }
     )
   }

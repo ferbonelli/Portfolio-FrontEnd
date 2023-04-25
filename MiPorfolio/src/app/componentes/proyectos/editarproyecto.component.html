@@ -1,1 +1,43 @@
-<p>editarproyecto works!</p>
+<div>
+    <h5>Edición del Proyecto</h5>
+    <div>
+      Nuevo proyecto:
+      <input 
+        type="text" 
+        [(ngModel)]="proyectoEditar.nombre" />
+    </div>
+    <br />
+    <div>
+        Descripción del proyecto:
+        <input 
+          type="text" 
+          [(ngModel)]="proyectoEditar.descripcion" />
+      </div>
+      <br />
+      <div>
+        Fecha de inicio:
+        <input 
+          type="text" 
+          [(ngModel)]="proyectoEditar.fecha_inicio" />
+      </div>
+      <br />
+      <div>
+        Fecha de final:
+        <input 
+          type="text" 
+          [(ngModel)]="proyectoEditar.fecha_final" />
+      </div>
+      <br />
+      <div>
+        Imagen:
+        <input 
+          type="text" 
+          [(ngModel)]="proyectoEditar.url_proyecto" />
+      </div>
+      <br />
+
+    <button type="button" class="btn btn-primary" (click)="onUpdate()">Actualizar proyecto</button>
+            
+</div>
+
+        
