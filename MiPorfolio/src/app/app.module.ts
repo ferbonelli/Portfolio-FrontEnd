@@ -20,6 +20,8 @@ import { NuevahabilidadComponent } from './componentes/habilidades/nuevahabilida
 import { EditarhabilidadComponent } from './componentes/habilidades/editarhabilidad.component';
 import { EditarproyectoComponent } from './componentes/proyectos/editarproyecto.component';
 import { NuevoproyectoComponent } from './componentes/proyectos/nuevoproyecto.component';
+import { NuevaexperienciaComponent } from './componentes/experiencia/nuevaexperiencia.component';
+import { EditarexperienciaComponent } from './componentes/experiencia/editarexperiencia.component';
 
 
 
@@ -39,6 +41,8 @@ import { NuevoproyectoComponent } from './componentes/proyectos/nuevoproyecto.co
     EditarhabilidadComponent,
     EditarproyectoComponent,
     NuevoproyectoComponent,
+    NuevaexperienciaComponent,
+    EditarexperienciaComponent,
   
   
   ],

@@ -1,0 +1,50 @@
+<div>
+    <h5>Edición de Experiencia</h5>
+    <div>
+      Nueva experiencia:
+      <input 
+        type="text" 
+        [(ngModel)]="experienciaEditar.empresa" />
+    </div>
+    <br>
+       <div>
+        Puesto:
+        <input 
+          type="text" 
+          [(ngModel)]="experienciaEditar.puesto" />
+      </div>
+      <br />
+
+      <div>
+        Descripción del puesto:
+        <input 
+          type="text" 
+          [(ngModel)]="experienciaEditar.descripcion" />
+      </div>
+      <br />
+      <div>
+        Fecha de inicio:
+        <input 
+          type="text" 
+          [(ngModel)]="experienciaEditar.fecha_desde" />
+      </div>
+      <br />
+      <div>
+        Fecha de final:
+        <input 
+          type="text" 
+          [(ngModel)]="experienciaEditar.fecha_hasta" />
+      </div>
+      <br />
+      <div>
+        Imagen:
+        <input 
+          type="text" 
+          [(ngModel)]="experienciaEditar.url_logo" />
+      </div>
+      <br />
+
+    <button type="button" class="btn btn-primary" (click)="onUpdate()">
+        Actualizar experiencia</button>
+            
+</div>

@@ -1,15 +1,24 @@
 <div class="card mat-card contenedor">
     <div class="card-body">
         <h5 class="card-titles">Experiencia</h5><br>
+
+        <button type="button" class="btn btn-primary" routerLink="/nuevaexperiencia" *ngIf="esta_logueado" >Agregar Experiencia</button>
+        <br><br>
+
         <div class="w3-container">
             <ul class="w3-ul w3-card-4 w3-col s8" >
-                <li *ngFor="let trabajos of experienciaList" class="w3-bar">
+                <li *ngFor="let experiencia of experienciaArray" class="w3-bar">
                     <img src="./assets/img/job.png" class="w3-bar-item w3-hide-small" style="width:60px">
 
                     <div class="w3-bar-item">
-                        <span ><h6>{{trabajos.empresa}}</h6></span><br>
-                        <span>{{trabajos.posicion}}</span><br>
-                        <span>{{trabajos.final}} - {{trabajos.comienzo}}</span>
+                        <span ><h6>{{experiencia.empresa}}</h6></span><br>
+                        <span *ngIf="esta_logueado"><a routerLink="/editarexperiencia/{{experiencia.id_experiencia}}">
+                            <fa-icon [icon]="faPen"></fa-icon></a></span>&nbsp;
+                        <span *ngIf="esta_logueado"><fa-icon [icon]="faTrashCan" (click)="onDelete(experiencia.id_experiencia)"></fa-icon></span>
+                        <br>
+                        <span>{{experiencia.puesto}</span><br>
+                        <span>{{experiencia.descripcion}}</span>
+                        <span>{{experiencia.fecha_hasta}} - {{experiencia.fecha_desde}}</span>
                     </div>
                 </li>
             </ul>

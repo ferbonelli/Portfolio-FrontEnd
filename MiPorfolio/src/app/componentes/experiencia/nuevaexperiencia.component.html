@@ -1,0 +1,56 @@
+<div>
+    <h5>Nueva Experiencia</h5>
+    <div>
+      Nueva experiencia:
+      <input 
+        placeholder="Ingrese nueva experiencia" 
+        type="text" 
+        [(ngModel)]="empresa" />
+    </div>
+    <br>
+       <div>
+        Puesto:
+        <input 
+          placeholder="Ingrese nuevo puesto" 
+          type="text" 
+          [(ngModel)]="puesto" />
+      </div>
+      <br />
+
+      <div>
+        Descripción del puesto:
+        <input 
+          placeholder="Ingrese nueva descripcion" 
+          type="text" 
+          [(ngModel)]="descripcion" />
+      </div>
+      <br />
+      <div>
+        Fecha de inicio:
+        <input 
+          placeholder="Ingrese fecha de inicio" 
+          type="text" 
+          [(ngModel)]="fecha_desde" />
+      </div>
+      <br />
+      <div>
+        Fecha de final:
+        <input 
+        placeholder="Ingrese fecha de finalización"
+          type="text" 
+          [(ngModel)]="fecha_hasta" />
+      </div>
+      <br />
+      <div>
+        Imagen:
+        <input 
+        placeholder="Ingrese la url del logo de la empresa"
+          type="text" 
+          [(ngModel)]="url_logo" />
+      </div>
+      <br />
+
+    <button type="button" class="btn btn-primary" (click)="onCreate()">Grabar experiencia</button>
+            
+</div>
+

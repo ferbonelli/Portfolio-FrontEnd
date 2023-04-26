@@ -6,6 +6,8 @@ import { NuevahabilidadComponent } from './componentes/habilidades/nuevahabilida
 import { EditarhabilidadComponent } from './componentes/habilidades/editarhabilidad.component';
 import { NuevoproyectoComponent } from './componentes/proyectos/nuevoproyecto.component';
 import { EditarproyectoComponent } from './componentes/proyectos/editarproyecto.component';
+import { NuevaexperienciaComponent } from './componentes/experiencia/nuevaexperiencia.component';
+import { EditarexperienciaComponent } from './componentes/experiencia/editarexperiencia.component';
 
 
 
@@ -16,6 +18,9 @@ const routes: Routes = [
 {path:'editarhabilidad/:id', component:EditarhabilidadComponent},
 {path:'nuevoproyecto', component:NuevoproyectoComponent},
 {path:'editarproyecto/:id', component:EditarproyectoComponent},
+{path:'nuevaexperiencia', component:NuevaexperienciaComponent},
+{path:'editarexperiencia/:id', component:EditarexperienciaComponent},
+
 {path:'', component:MiportfolioComponent,pathMatch: 'full'},
 ];
 
