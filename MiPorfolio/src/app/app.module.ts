@@ -24,6 +24,8 @@ import { NuevaexperienciaComponent } from './componentes/experiencia/nuevaexperi
 import { EditarexperienciaComponent } from './componentes/experiencia/editarexperiencia.component';
 import { EditareducacionComponent } from './componentes/educacion/editareducacion.component';
 import { NuevaeducacionComponent } from './componentes/educacion/nuevaeducacion.component';
+import { EditaracercaDeComponent } from './componentes/acerca-de/editaracerca-de.component';
+import { EditarbannerComponent } from './componentes/banner/editarbanner.component';
 
 
 
@@ -47,6 +49,8 @@ import { NuevaeducacionComponent } from './componentes/educacion/nuevaeducacion.
     EditarexperienciaComponent,
     EditareducacionComponent,
     NuevaeducacionComponent,
+    EditaracercaDeComponent,
+    EditarbannerComponent,
   
   
   ],
