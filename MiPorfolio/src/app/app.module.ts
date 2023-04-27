@@ -22,6 +22,8 @@ import { EditarproyectoComponent } from './componentes/proyectos/editarproyecto.
 import { NuevoproyectoComponent } from './componentes/proyectos/nuevoproyecto.component';
 import { NuevaexperienciaComponent } from './componentes/experiencia/nuevaexperiencia.component';
 import { EditarexperienciaComponent } from './componentes/experiencia/editarexperiencia.component';
+import { EditareducacionComponent } from './componentes/educacion/editareducacion.component';
+import { NuevaeducacionComponent } from './componentes/educacion/nuevaeducacion.component';
 
 
 
@@ -43,6 +45,8 @@ import { EditarexperienciaComponent } from './componentes/experiencia/editarexpe
     NuevoproyectoComponent,
     NuevaexperienciaComponent,
     EditarexperienciaComponent,
+    EditareducacionComponent,
+    NuevaeducacionComponent,
   
   
   ],

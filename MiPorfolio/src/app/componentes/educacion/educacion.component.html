@@ -1,15 +1,23 @@
 <div class="card mat-card contenedor">
     <div class="card-body">
         <h5 class="card-titles">Educación</h5><br>
+
+        <button type="button" class="btn btn-primary" routerLink="/nuevaeducacion" *ngIf="esta_logueado" >Agregar Educacion</button>
+        <br><br>
+
         <div class="w3-container">
             <ul class="w3-ul w3-card-4 w3-col s8" >
-                <li *ngFor="let educacion of educacionList" class="w3-bar">
+                <li *ngFor="let educacion of educacionArray" class="w3-bar">
                     <img src="./assets/img/cursos.png" class="w3-bar-item w3-hide-small" style="width:60px">
 
                     <div class="w3-bar-item">
                         <span ><h6>{{educacion.institucion}}</h6></span><br>
+                        <span *ngIf="esta_logueado"><a routerLink="/editareducacion/{{educacion.id_educacion}}">
+                            <fa-icon [icon]="faPen"></fa-icon></a></span>&nbsp;
+                        <span *ngIf="esta_logueado"><fa-icon [icon]="faTrashCan" (click)="onDelete(educacion.id_educacion)"></fa-icon></span>
+                        <br>
                         <span>{{educacion.titulo}}</span><br>
-                        <span>{{educacion.final}} - {{educacion.comienzo}}</span>
+                        <span>{{educacion.fecha_final}} - {{educacion.fecha_inicio}}</span>
                     </div>
                 </li>
             </ul>

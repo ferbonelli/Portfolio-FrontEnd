@@ -1,0 +1,45 @@
+<div>
+    <h5>Editar Educacion</h5>
+    <div>
+      Nueva educacion:
+      <input 
+        type="text" 
+        [(ngModel)]="educacionEditar.institucion" />
+    </div>
+    <br>
+       <div>
+        Título:
+        <input 
+          type="text" 
+          [(ngModel)]="educacionEditar.titulo" />
+      </div>
+      <br />
+
+      
+      <div>
+        Fecha de inicio:
+        <input 
+          type="text" 
+          [(ngModel)]="educacionEditar.fecha_inicio" />
+      </div>
+      <br />
+      <div>
+        Fecha de final:
+        <input 
+          type="text" 
+          [(ngModel)]="educacionEditar.fecha_final" />
+      </div>
+      <br />
+      <div>
+        Imagen:
+        <input 
+          type="text" 
+          [(ngModel)]="educacionEditar.url_logoinst" />
+      </div>
+      <br />
+
+      <button type="button" class="btn btn-primary" (click)="onUpdate()">
+        Actualizar educacion</button>
+            
+
+</div>

@@ -8,6 +8,9 @@ import { NuevoproyectoComponent } from './componentes/proyectos/nuevoproyecto.co
 import { EditarproyectoComponent } from './componentes/proyectos/editarproyecto.component';
 import { NuevaexperienciaComponent } from './componentes/experiencia/nuevaexperiencia.component';
 import { EditarexperienciaComponent } from './componentes/experiencia/editarexperiencia.component';
+import { NuevaeducacionComponent } from './componentes/educacion/nuevaeducacion.component';
+import { EditareducacionComponent } from './componentes/educacion/editareducacion.component';
+
 
 
 
@@ -20,7 +23,8 @@ const routes: Routes = [
 {path:'editarproyecto/:id', component:EditarproyectoComponent},
 {path:'nuevaexperiencia', component:NuevaexperienciaComponent},
 {path:'editarexperiencia/:id', component:EditarexperienciaComponent},
-
+{path:'nuevaeducacion', component:NuevaeducacionComponent},
+{path:'editareducacion/:id', component:EditareducacionComponent},
 {path:'', component:MiportfolioComponent,pathMatch: 'full'},
 ];
 
