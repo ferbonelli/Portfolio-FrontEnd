@@ -1,9 +1,11 @@
 <div class="card mat-card contenedor">
     <div class="card-body">
-        <h5 class="card-titles">Experiencia</h5><br>
-
-        <button type="button" class="btn btn-primary" routerLink="/nuevaexperiencia" *ngIf="esta_logueado" >Agregar Experiencia</button>
+        <h5 class="card-titles">Experiencia</h5>
+        
+        <div *ngIf="esta_logueado">
+        <button type="button" class="btn btn-secondary" routerLink="/nuevaexperiencia" >Agregar Experiencia</button>
         <br><br>
+        </div>
 
         <div class="w3-container">
             <ul class="w3-ul w3-card-4 w3-col s8" >
@@ -11,11 +13,13 @@
                     <img src="./assets/img/job.png" class="w3-bar-item w3-hide-small" style="width:60px">
 
                     <div class="w3-bar-item">
-                        <span ><h6>{{experiencia.empresa}}</h6></span><br>
-                        <span *ngIf="esta_logueado"><a routerLink="/editarexperiencia/{{experiencia.id_experiencia}}">
+                        <span ><h6>{{experiencia.empresa}}</h6></span>
+                        <div *ngIf="esta_logueado">
+                        <span><a routerLink="/editarexperiencia/{{experiencia.id_experiencia}}">
                             <fa-icon [icon]="faPen"></fa-icon></a></span>&nbsp;
-                        <span *ngIf="esta_logueado"><fa-icon [icon]="faTrashCan" (click)="onDelete(experiencia.id_experiencia)"></fa-icon></span>
+                        <span><fa-icon [icon]="faTrashCan" (click)="onDelete(experiencia.id_experiencia)"></fa-icon></span>
                         <br>
+                        </div>
                         <span>{{experiencia.puesto}}</span><br>
                         <span>{{experiencia.descripcion}}</span><br>
                         <span>{{experiencia.fecha_hasta}} - {{experiencia.fecha_desde}}</span>
@@ -24,5 +28,5 @@
             </ul>
         </div>
     </div>
-<br>
+
 </div>

@@ -1,9 +1,11 @@
 <div class="card mat-card contenedor">
     <div class="card-body">
-        <h5 class="card-titles">Educación</h5><br>
+        <h5 class="card-titles">Educación</h5>
 
-        <button type="button" class="btn btn-primary" routerLink="/nuevaeducacion" *ngIf="esta_logueado" >Agregar Educacion</button>
+        <div *ngIf="esta_logueado">
+        <button type="button" class="btn btn-secondary" routerLink="/nuevaeducacion">Agregar Educacion</button>
         <br><br>
+        </div>
 
         <div class="w3-container">
             <ul class="w3-ul w3-card-4 w3-col s8" >
@@ -11,11 +13,13 @@
                     <img src="./assets/img/cursos.png" class="w3-bar-item w3-hide-small" style="width:60px">
 
                     <div class="w3-bar-item">
-                        <span ><h6>{{educacion.institucion}}</h6></span><br>
-                        <span *ngIf="esta_logueado"><a routerLink="/editareducacion/{{educacion.id_educacion}}">
+                        <span ><h6>{{educacion.institucion}}</h6></span>
+                        <div *ngIf="esta_logueado">
+                        <span><a routerLink="/editareducacion/{{educacion.id_educacion}}">
                             <fa-icon [icon]="faPen"></fa-icon></a></span>&nbsp;
-                        <span *ngIf="esta_logueado"><fa-icon [icon]="faTrashCan" (click)="onDelete(educacion.id_educacion)"></fa-icon></span>
+                        <span><fa-icon [icon]="faTrashCan" (click)="onDelete(educacion.id_educacion)"></fa-icon></span>
                         <br>
+                        </div>
                         <span>{{educacion.titulo}}</span><br>
                         <span>{{educacion.fecha_final}} - {{educacion.fecha_inicio}}</span>
                     </div>
@@ -23,5 +27,4 @@
             </ul>
         </div>
     </div>
-<br>
 </div>

@@ -1,9 +1,10 @@
 <div class="contenedorskill">
     
     <h5>Habilidades</h5>
-          
-    <button type="button" class="btn btn-primary" routerLink="/nuevahabilidad" *ngIf="esta_logueado" >Agregar habilidad</button>
-<br><br>
+    <div *ngIf="esta_logueado">      
+    <button type="button" class="btn btn-secondary" routerLink="/nuevahabilidad">Agregar habilidad</button>
+    <br><br>
+    </div>
 
       <!-- Muestro la lista de habilidades-->  
 
@@ -14,9 +15,11 @@
                 <div class="card-body">
                     
                     <div><span><h5>{{habilidades.nombre}}</h5></span>
-                    <span *ngIf="esta_logueado"><a routerLink="/editarhabilidad/{{habilidades.id_habilidad}}">
+                      <div *ngIf="esta_logueado">
+                        <span><a routerLink="/editarhabilidad/{{habilidades.id_habilidad}}">
                         <fa-icon [icon]="faPen"></fa-icon></a></span>&nbsp;
-                    <span *ngIf="esta_logueado"><fa-icon [icon]="faTrashCan" (click)="onDelete(habilidades.id_habilidad)"></fa-icon></span>
+                        <span><fa-icon [icon]="faTrashCan" (click)="onDelete(habilidades.id_habilidad)"></fa-icon></span>
+                      </div>
                     </div>
                     
                     
