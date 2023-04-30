@@ -10,8 +10,8 @@
         <div class="w3-container">
             <ul class="w3-ul w3-card-4 w3-col s8" >
                 <li *ngFor="let proyecto of proyectosArray" class="w3-bar">
-                    <img src="./assets/img/proyecto.png" class="w3-bar-item w3-hide-small" style="width:60px">
-
+                    <img src={{proyecto.url_proyecto}} class="w3-bar-item w3-hide-small" style="width:60px">
+                    
                     <div class="w3-bar-item">
                         <span ><h6>{{proyecto.nombre}}</h6></span>
                         <div *ngIf="esta_logueado">
@@ -22,6 +22,7 @@
                         </div>
                         <span>{{proyecto.descripcion}}</span><br>
                         <span>{{proyecto.fecha_final}} - {{proyecto.fecha_inicio}}</span>
+                        
                     </div>
                 </li>
             </ul>

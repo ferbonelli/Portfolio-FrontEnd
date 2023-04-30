@@ -26,6 +26,7 @@ export class ProyectosComponent implements OnInit {
 
   ngOnInit(): void {
     this.mostrarProyectos();
+   
     if (localStorage.getItem("estado_login"))
         {
           this.esta_logueado=true;

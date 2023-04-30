@@ -1,1 +1,10 @@
-<p>editaracerca-de works!</p>
+<h3 class="m-5">Modificar acerca de</h3>
+<div class="m-5 w3-padding w3-border w3-round ws-grey">
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Modificar acerca de</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="personaEditar.acerca_de" >
+  </div>
+  
+  <button type="button" class="btn btn-primary" (click)="onUpdate()">Actualizar Acerca de</button>
+</div>
+

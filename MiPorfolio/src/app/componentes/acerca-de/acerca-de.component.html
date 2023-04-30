@@ -3,5 +3,9 @@
         <div class="card-body">
             <h5 class="card-titles">Acerca de</h5>
             <p class="card-text">{{persona.acerca_de}}</p>
+            <div *ngIf="esta_logueado">
+                <span><a routerLink="/editaracercade/{{persona.id_persona}}">
+                <fa-icon [icon]="faPen"></fa-icon></a></span>&nbsp;
+            </div>
         </div>
     </div>
