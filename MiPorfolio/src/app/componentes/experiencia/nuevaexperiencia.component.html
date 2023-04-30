@@ -1,56 +1,40 @@
-<div>
-    <h5>Nueva Experiencia</h5>
-    <div>
-      Nueva experiencia:
-      <input 
-        placeholder="Ingrese nueva experiencia" 
-        type="text" 
-        [(ngModel)]="empresa" />
-    </div>
+<h3 class="m-5">Agregar un nueva experiencia laboral</h3>
+<div class="m-5 w3-padding w3-border w3-round ws-grey">
+
+  <div class="col-md-6">
+    <label for="formGroupExampleInput" class="form-label">Nombre de empresa</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="empresa" >
+  </div>
+  
+  <div class="col-12">
+    <label for="formGroupExampleInput" class="form-label">Puesto</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="puesto">
+  </div>
+
+  <div class="col-12">
+    <label for="formGroupExampleInput" class="form-label">Descripción de tareas del Puesto</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="descripcion">
+  </div>
+
+  <div class="row g-3">
+      <div class="col-md-6">
+        <label for="formGroupExampleInput" class="form-label">Fecha de inicio</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="fecha_desde" >
+      </div>
+      <div class="col-md-6">
+        <label for="formGroupExampleInput" class="form-label">Fecha de finalización</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="fecha_hasta" >
+      </div>
+  </div>
+  
+  
+  <div class="col-12">
+    <label for="formGroupExampleInput" class="form-label">url del logo de la empresa</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="url_logo" >
+  </div>
+
+  <div class="col-12">
     <br>
-       <div>
-        Puesto:
-        <input 
-          placeholder="Ingrese nuevo puesto" 
-          type="text" 
-          [(ngModel)]="puesto" />
-      </div>
-      <br />
-
-      <div>
-        Descripción del puesto:
-        <input 
-          placeholder="Ingrese nueva descripcion" 
-          type="text" 
-          [(ngModel)]="descripcion" />
-      </div>
-      <br />
-      <div>
-        Fecha de inicio:
-        <input 
-          placeholder="Ingrese fecha de inicio" 
-          type="text" 
-          [(ngModel)]="fecha_desde" />
-      </div>
-      <br />
-      <div>
-        Fecha de final:
-        <input 
-        placeholder="Ingrese fecha de finalización"
-          type="text" 
-          [(ngModel)]="fecha_hasta" />
-      </div>
-      <br />
-      <div>
-        Imagen:
-        <input 
-        placeholder="Ingrese la url del logo de la empresa"
-          type="text" 
-          [(ngModel)]="url_logo" />
-      </div>
-      <br />
-
-    <button type="button" class="btn btn-primary" (click)="onCreate()">Grabar experiencia</button>
-            
+    <button type="button" class="btn btn-primary" (click)="onCreate()">Agregar curso</button>
+  </div>
 </div>
-

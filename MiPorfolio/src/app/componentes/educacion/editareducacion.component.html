@@ -1,45 +1,36 @@
-<div>
-    <h5>Editar Educacion</h5>
-    <div>
-      Nueva educacion:
-      <input 
-        type="text" 
-        [(ngModel)]="educacionEditar.institucion" />
-    </div>
+<h3 class="m-5">Editar curso</h3>
+<div class="m-5 w3-padding w3-border w3-round ws-grey">
+
+  <div class="col-md-6">
+    <label for="formGroupExampleInput" class="form-label">Nombre del curso</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="educacionEditar.institucion" >
+  </div>
+  
+  <div class="col-12">
+    <label for="formGroupExampleInput" class="form-label">Titulo otorgado</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="educacionEditar.titulo">
+  </div>
+
+  <div class="row g-3">
+      <div class="col-md-6">
+        <label for="formGroupExampleInput" class="form-label">Fecha de inicio</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="educacionEditar.fecha_inicio" >
+      </div>
+      <div class="col-md-6">
+        <label for="formGroupExampleInput" class="form-label">Fecha de finalización</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="educacionEditar.fecha_final" >
+      </div>
+  </div>
+  
+  
+  <div class="col-12">
+    <label for="formGroupExampleInput" class="form-label">url del logo de la institución</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="educacionEditar.url_logoinst" >
+  </div>
+
+  <div class="col-12">
     <br>
-       <div>
-        Título:
-        <input 
-          type="text" 
-          [(ngModel)]="educacionEditar.titulo" />
-      </div>
-      <br />
-
-      
-      <div>
-        Fecha de inicio:
-        <input 
-          type="text" 
-          [(ngModel)]="educacionEditar.fecha_inicio" />
-      </div>
-      <br />
-      <div>
-        Fecha de final:
-        <input 
-          type="text" 
-          [(ngModel)]="educacionEditar.fecha_final" />
-      </div>
-      <br />
-      <div>
-        Imagen:
-        <input 
-          type="text" 
-          [(ngModel)]="educacionEditar.url_logoinst" />
-      </div>
-      <br />
-
-      <button type="button" class="btn btn-primary" (click)="onUpdate()">
-        Actualizar educacion</button>
-            
-
+    <button type="button" class="btn btn-primary" (click)="onUpdate()">Agregar curso</button>
+  </div>
 </div>
+

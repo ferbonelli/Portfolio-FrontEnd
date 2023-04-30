@@ -1,50 +1,41 @@
-<div>
-    <h5>Edición de Experiencia</h5>
-    <div>
-      Nueva experiencia:
-      <input 
-        type="text" 
-        [(ngModel)]="experienciaEditar.empresa" />
-    </div>
+<h3 class="m-5">Editar experiencia laboral</h3>
+<div class="m-5 w3-padding w3-border w3-round ws-grey">
+
+  <div class="col-md-6">
+    <label for="formGroupExampleInput" class="form-label">Nombre de empresa</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="experienciaEditar.empresa" >
+  </div>
+  
+  <div class="col-12">
+    <label for="formGroupExampleInput" class="form-label">Puesto</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="experienciaEditar.puesto">
+  </div>
+
+  <div class="col-12">
+    <label for="formGroupExampleInput" class="form-label">Descripción de tareas del Puesto</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="experienciaEditar.descripcion">
+  </div>
+
+  <div class="row g-3">
+      <div class="col-md-6">
+        <label for="formGroupExampleInput" class="form-label">Fecha de inicio</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="experienciaEditar.fecha_desde" >
+      </div>
+      <div class="col-md-6">
+        <label for="formGroupExampleInput" class="form-label">Fecha de finalización</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="experienciaEditar.fecha_hasta" >
+      </div>
+  </div>
+  
+  
+  <div class="col-12">
+    <label for="formGroupExampleInput" class="form-label">url del logo de la empresa</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="experienciaEditar.url_logo" >
+  </div>
+
+  <div class="col-12">
     <br>
-       <div>
-        Puesto:
-        <input 
-          type="text" 
-          [(ngModel)]="experienciaEditar.puesto" />
-      </div>
-      <br />
-
-      <div>
-        Descripción del puesto:
-        <input 
-          type="text" 
-          [(ngModel)]="experienciaEditar.descripcion" />
-      </div>
-      <br />
-      <div>
-        Fecha de inicio:
-        <input 
-          type="text" 
-          [(ngModel)]="experienciaEditar.fecha_desde" />
-      </div>
-      <br />
-      <div>
-        Fecha de final:
-        <input 
-          type="text" 
-          [(ngModel)]="experienciaEditar.fecha_hasta" />
-      </div>
-      <br />
-      <div>
-        Imagen:
-        <input 
-          type="text" 
-          [(ngModel)]="experienciaEditar.url_logo" />
-      </div>
-      <br />
-
-    <button type="button" class="btn btn-primary" (click)="onUpdate()">
-        Actualizar experiencia</button>
-            
+    <button type="button" class="btn btn-primary" (click)="onUpdate()">Agregar curso</button>
+  </div>
 </div>
+
