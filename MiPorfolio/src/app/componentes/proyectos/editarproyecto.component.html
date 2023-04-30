@@ -1,43 +1,34 @@
-<div>
-    <h5>Edición del Proyecto</h5>
-    <div>
-      Nuevo proyecto:
-      <input 
-        type="text" 
-        [(ngModel)]="proyectoEditar.nombre" />
-    </div>
-    <br>
-    <div>
-        Descripción del proyecto:
-        <input 
-          type="text" 
-          [(ngModel)]="proyectoEditar.descripcion" />
-      </div>
-      <br />
-      <div>
-        Fecha de inicio:
-        <input 
-          type="text" 
-          [(ngModel)]="proyectoEditar.fecha_inicio" />
-      </div>
-      <br />
-      <div>
-        Fecha de final:
-        <input 
-          type="text" 
-          [(ngModel)]="proyectoEditar.fecha_final" />
-      </div>
-      <br />
-      <div>
-        Imagen:
-        <input 
-          type="text" 
-          [(ngModel)]="proyectoEditar.url_proyecto" />
-      </div>
-      <br />
+<h3 class="m-5">Editar proyecto</h3>
+<div class="m-5 w3-padding w3-border w3-round ws-grey">
 
-    <button type="button" class="btn btn-primary" (click)="onUpdate()">Actualizar proyecto</button>
-            
+  <div class="col-md-6">
+    <label for="formGroupExampleInput" class="form-label">Nombre del proyecto</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="proyectoEditar.nombre" >
+  </div>
+  
+  <div class="col-12">
+    <label for="formGroupExampleInput" class="form-label">Descripción del proyecto</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="proyectoEditar.descripcion">
+  </div>
+
+  <div class="row g-3">
+      <div class="col-md-6">
+        <label for="formGroupExampleInput" class="form-label">Fecha de inicio</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="proyectoEditar.fecha_inicio" >
+      </div>
+      <div class="col-md-6">
+        <label for="formGroupExampleInput" class="form-label">Fecha de finalización</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="proyectoEditar.fecha_final" >
+      </div>
+  </div>
+  
+  
+  <div class="col-12">
+    <label for="formGroupExampleInput" class="form-label">url de la imagen</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="proyectoEditar.url_proyecto" >
+  </div>
+
+  <div class="col-12">
+    <button type="button" class="btn btn-primary" (click)="onUpdate()">Actualizar Proyecto</button>
+  </div>
 </div>
-
-        

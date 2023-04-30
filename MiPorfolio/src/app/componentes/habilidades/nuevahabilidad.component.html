@@ -1,24 +1,13 @@
-<div>
+<h3 class="m-5">Agregar nueva habilidad</h3>
+<div class="m-5 w3-padding w3-border w3-round ws-grey">
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Nueva habilidad</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="nombre" >
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Porcentaje alcanzado</label>
+    <input type="number" class="form-control" id="formGroupExampleInput2" [(ngModel)]="porcentaje">
+  </div>
 
-    <h5>Alta de habilidad</h5>
-    <div>
-      Nueva habilidad:
-      <input 
-        placeholder="Ingrese nueva habilidad" 
-        type="text" 
-        [(ngModel)]="nombre" />
-    </div>
-    <br />
-    <div>
-      Porcentaje:
-      <input
-        placeholder="ingrese porcentaje"
-        type="number"
-        [(ngModel)]="porcentaje"
-      />
-    </div>
-    <br />
-    
-    <button type="button" class="btn btn-primary" (click)="onCreate()">Grabar Habilidad</button>
-        
+  <button type="button" class="btn btn-primary" (click)="onCreate()">Agregar Habilidad</button>
 </div>

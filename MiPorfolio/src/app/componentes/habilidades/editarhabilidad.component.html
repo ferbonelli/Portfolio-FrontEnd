@@ -1,23 +1,13 @@
-<div>
+<h3 class="m-5">Modificar habilidad</h3>
+<div class="m-5 w3-padding w3-border w3-round ws-grey">
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Modificar habilidad</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="habilidadEditar.nombre" >
+  </div>
+  <div class="mb-3">
+    <label for="formGroupExampleInput2" class="form-label">Modificar porcentaje</label>
+    <input type="number" class="form-control" id="formGroupExampleInput2" [(ngModel)]="habilidadEditar.porcentaje">
+  </div>
 
-    <h5>Edición de habilidad</h5>
-    <div>
-      Editar habilidad:
-      <input 
-        type="text" 
-        [(ngModel)]="habilidadEditar.nombre" />
-    </div>
-    <br />
-    <div>
-      Editar Porcentaje:
-      <input
-        type="number"
-        [(ngModel)]="habilidadEditar.porcentaje"
-      />
-    </div>
-    <br />
-    
-    <button type="button" class="btn btn-primary" (click)="onUpdate()">Actualizar Habilidad</button>
-        
+  <button type="button" class="btn btn-primary" (click)="onUpdate()">Actualizar Habilidad</button>
 </div>
-
