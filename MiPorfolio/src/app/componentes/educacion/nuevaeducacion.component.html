@@ -1,4 +1,41 @@
-<div>
+<h3 class="m-5">Agregar un nuevo curso</h3>
+<div class="m-5 w3-padding w3-border w3-round ws-grey">
+
+  <div class="col-md-6">
+    <label for="formGroupExampleInput" class="form-label">Nombre del curso</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="institucion" >
+  </div>
+  
+  <div class="col-12">
+    <label for="formGroupExampleInput" class="form-label">Titulo otorgado</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="titulo">
+  </div>
+
+  <div class="row g-3">
+      <div class="col-md-6">
+        <label for="formGroupExampleInput" class="form-label">Fecha de inicio</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="fecha_inicio" >
+      </div>
+      <div class="col-md-6">
+        <label for="formGroupExampleInput" class="form-label">Fecha de finalización</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="fecha_final" >
+      </div>
+  </div>
+  
+  
+  <div class="col-12">
+    <label for="formGroupExampleInput" class="form-label">url del logo de la institución</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="url_logoinst" >
+  </div>
+
+  <div class="col-12">
+    <button type="button" class="btn btn-primary" (click)="onCreate()">Agregar curso</button>
+  </div>
+</div>
+
+
+<!--
+  <div>
     <h5>Nueva Educacion</h5>
     <div>
       Nueva educacion:
@@ -46,5 +83,6 @@
     <button type="button" class="btn btn-primary" (click)="onCreate()">Grabar educacion</button>
             
 </div>
+-->
 
 
