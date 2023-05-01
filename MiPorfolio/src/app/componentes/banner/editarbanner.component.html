@@ -1,1 +1,24 @@
-<p>editarbanner works!</p>
+<h3 class="m-5">Modificar Datos del banner</h3>
+<div class="m-5 w3-padding w3-border w3-round ws-grey">
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="personaEditar.nombre" >
+  </div>
+
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Apellido</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="personaEditar.apellido" >
+  </div>
+
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">Profesión</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="personaEditar.profesion" >
+  </div>
+
+  <div class="mb-3">
+    <label for="formGroupExampleInput" class="form-label">url de imagen</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="personaEditar.url_foto" >
+  </div>
+  
+  <button type="button" class="btn btn-primary" (click)="onUpdate()">Actualizar datos</button>
+</div>

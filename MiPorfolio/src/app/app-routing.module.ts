@@ -11,7 +11,7 @@ import { EditarexperienciaComponent } from './componentes/experiencia/editarexpe
 import { NuevaeducacionComponent } from './componentes/educacion/nuevaeducacion.component';
 import { EditareducacionComponent } from './componentes/educacion/editareducacion.component';
 import { EditaracercaDeComponent } from './componentes/acerca-de/editaracerca-de.component';
-
+import { EditarbannerComponent } from './componentes/banner/editarbanner.component';
 
 
 
@@ -27,6 +27,8 @@ const routes: Routes = [
 {path:'nuevaeducacion', component:NuevaeducacionComponent},
 {path:'editareducacion/:id', component:EditareducacionComponent},
 {path:'editaracercade/:id', component:EditaracercaDeComponent},
+{path:'editarbanner/:id', component:EditarbannerComponent},
+
 {path:'', component:MiportfolioComponent,pathMatch: 'full'},
 ];
 
