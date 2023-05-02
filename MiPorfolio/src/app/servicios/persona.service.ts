@@ -14,13 +14,17 @@ export class PersonaService {
 
   // Métodos de acceso a la api
 
+  public obtenerPersonas():Observable<Persona[]>{
+    return this.http.get<Persona[]>(this.url + 'persona');
+    };
+
   public obtenerPersona(id: number):Observable<Persona>{
     return this.http.get<Persona>(this.url + `persona/${id}`);
     };
 
   
-    public actualizarPersona(personaActualizar:Persona):Observable<Persona>{
-      return this.http.put<Persona>(this.url + 'persona',personaActualizar);
-      };
+  public actualizarPersona(personaActualizar:Persona):Observable<Persona>{
+    return this.http.put<Persona>(this.url + 'persona',personaActualizar);
+    };
 
 }

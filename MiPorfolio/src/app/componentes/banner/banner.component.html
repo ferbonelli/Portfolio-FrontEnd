@@ -1,15 +1,15 @@
 <div class="card img-fluid" >
     <img class="card-img-top" src="./assets/img/electronica.png" alt="Card image" style="width:100%">
-          <img   src={{persona.url_foto}} class="rounded-circle img-fluid col-md-3 perfil-image">
+          <img   src={{personaArray[0].url_foto}} class="rounded-circle img-fluid col-md-3 perfil-image">
 </div>
 <div>
   <br>
-  <h4 class="text-bg-primary text-center">{{persona.nombre}}&nbsp; {{persona.apellido}}
-    &nbsp;-&nbsp;{{persona.profesion}}
+  <h4 class="text-bg-primary text-center">{{personaArray[0].nombre}}&nbsp; {{personaArray[0].apellido}}
+    &nbsp;-&nbsp;{{personaArray[0].profesion}}
   </h4>
 
   <div *ngIf="esta_logueado">      
-    <button type="button" class="btn btn-secondary" routerLink="/editarbanner/{{persona.id_persona}}">Editar banner</button>
+    <button type="button" class="btn btn-secondary" routerLink="/editarbanner/{{personaArray[0].id_persona}}">Editar banner</button>
     <br><br>
     </div>
 
