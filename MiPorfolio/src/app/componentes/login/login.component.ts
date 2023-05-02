@@ -15,8 +15,10 @@ export class LoginComponent implements OnInit {
 
   formularioLogin: FormGroup;
   // Como es mi ortfolio siempre uso el id 1
-  id: number=2;
-  datosUsuario: Usuario= new Usuario(0,'','',1);
+  usuarioArray: Usuario[] = [];
+  
+  //id: number=2;
+  //datosUsuario: Usuario= new Usuario(0,'','',1);
   
   constructor(private formBuilder:FormBuilder,
               private ruta:Router,
@@ -32,9 +34,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void{
-    this.datos.obtenerUsuario(this.id).subscribe(
+    this.datos.obtenerUsuarios().subscribe(
       datau=>{
-        this.datosUsuario=datau;
+        this.usuarioArray=datau;
             
     });
   }
@@ -49,9 +51,9 @@ get Password() {
 }
  
 onLogin(event: Event){
-  if (this.formularioLogin.value.password===this.datosUsuario.password && 
+  if (this.formularioLogin.value.password===this.usuarioArray[0].password && 
     
-    this.formularioLogin.value.username===this.datosUsuario.username)
+    this.formularioLogin.value.username===this.usuarioArray[0].username)
   {    
     localStorage.setItem('estado_login','logueado');
     alert('Te logueaste correctamente');

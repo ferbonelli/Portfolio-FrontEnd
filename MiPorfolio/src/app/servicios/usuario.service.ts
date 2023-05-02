@@ -14,6 +14,10 @@ export class UsuarioService {
 
   // Métodos de acceso a la api
   
+  public obtenerUsuarios():Observable<Usuario[]>{
+    return this.http.get<Usuario[]>(this.url + 'usuario');
+    };
+
   public obtenerUsuario(id: number):Observable<Usuario>{
     return this.http.get<Usuario>(this.url + `usuario/${id}`);
     };
