@@ -15,12 +15,10 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 export class AcercaDeComponent implements OnInit {
 
   // Declaraciones
+  personaArray: Persona[] = [];
   esta_logueado: boolean = false;
   faPen=faPen;
-  // En este caso como es mi porfolio voy a usar solo el id de mi persona
-  id: number=1;
-  persona: Persona = new Persona(0,'','','','','','','','','');
-
+  
 
   constructor(private datosPersona:PersonaService) {}
 
@@ -37,11 +35,11 @@ export class AcercaDeComponent implements OnInit {
     }
 
     mostraracerca(): void {
-
-      this.datosPersona.obtenerPersona(this.id).subscribe(
+      this.datosPersona.obtenerPersonas().subscribe(
         data => {
-          this.persona=data;
-        });
+          this.personaArray=data;
+                  
+      });
     }
 
 }

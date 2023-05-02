@@ -18,10 +18,7 @@ export class BannerComponent implements OnInit{
    esta_logueado: boolean = false;
    personaArray: Persona[] = [];
   
-   // En este caso como es mi porfolio voy a usar solo el id de mi persona
-   //id: number=1;
-  //persona: Persona = new Persona(0,'','','','','','','','','');
-
+  
   constructor(private datosPersona:PersonaService) {}
 
   ngOnInit(): void {
@@ -45,15 +42,4 @@ export class BannerComponent implements OnInit{
   }
   
   
-  /*
-  mostrarPersona():void {
-    this.datosPersona.obtenerPersona(this.id).subscribe(
-      data => {
-        this.persona=data;
-                
-    });
-    
-  }
-  */
-
 }

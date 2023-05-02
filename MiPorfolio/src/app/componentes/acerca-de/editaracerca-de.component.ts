@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Persona } from 'src/app/model/persona.model';
 
 // Importo servicios
@@ -14,10 +14,11 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 export class EditaracercaDeComponent implements OnInit{
 
   personaEditar: Persona = new Persona(0,'','','','','','','','','');
-  id: number = 1;
+  
 
   constructor(
     private datosPersona:PersonaService,
+    private rutaActiva:ActivatedRoute,
     private ruta:Router
 ){}
 
@@ -28,12 +29,17 @@ ngOnInit(): void {
 
 traerPersona() {
       
-    this.datosPersona.obtenerPersona(this.id).subscribe(
-      data =>{
-        this.personaEditar = data;
-              
-      }
-    )
+  const id = this.rutaActiva.snapshot.params['id'];
+
+  this.datosPersona.obtenerPersona(id).subscribe(
+    data =>{
+      this.personaEditar = data;
+            
+    }, err =>{
+      alert("Error al modificar acerca de");
+      this.ruta.navigate(['/portfolio']);
+    }
+  )
 }
 
 onUpdate() {
