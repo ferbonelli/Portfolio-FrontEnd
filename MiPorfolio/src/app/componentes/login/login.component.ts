@@ -13,13 +13,11 @@ import { UsuarioService } from 'src/app/servicios/usuario.service';
 })
 export class LoginComponent implements OnInit {
 
+  // Declaraciones
   formularioLogin: FormGroup;
-  // Como es mi ortfolio siempre uso el id 1
   usuarioArray: Usuario[] = [];
   
-  //id: number=2;
-  //datosUsuario: Usuario= new Usuario(0,'','',1);
-  
+    
   constructor(private formBuilder:FormBuilder,
               private ruta:Router,
               private datos:UsuarioService
