@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Usuario } from 'src/app/model/usuario.model';
 
 // Importo servicios
-import { UsuarioService } from 'src/app/servicios/usuario.service';
+import { LoginService } from 'src/app/servicios/login.service';
 
 @Component({
   selector: 'app-login',
@@ -15,12 +15,13 @@ export class LoginComponent implements OnInit {
 
   // Declaraciones
   formularioLogin: FormGroup;
-  usuarioArray: Usuario[] = [];
+  mensaje: string = '';
+  
   
     
   constructor(private formBuilder:FormBuilder,
               private ruta:Router,
-              private datos:UsuarioService
+              private login:LoginService
     ) { 
 
     this.formularioLogin=this.formBuilder.group(
@@ -32,11 +33,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void{
-    this.datos.obtenerUsuarios().subscribe(
-      datau=>{
-        this.usuarioArray=datau;
-            
-    });
+    
   }
   
 
@@ -49,18 +46,27 @@ get Password() {
 }
  
 onLogin(event: Event){
-  if (this.formularioLogin.value.password===this.usuarioArray[0].password && 
-    
-    this.formularioLogin.value.username===this.usuarioArray[0].username)
-  {    
-    localStorage.setItem('estado_login','logueado');
-    alert('Te logueaste correctamente');
+  
+  this.login.enviarCredenciales(
+          this.formularioLogin.value.username,
+          this.formularioLogin.value.password
+        ).subscribe(
+    data=>{
+      this.mensaje=data;
+      console.log(this.mensaje);
+      localStorage.setItem('estado_login','logueado');
+      alert('Te logueaste correctamente');
+      this.ruta.navigate(['/portfolio']);
+          
+  }, err =>{
+    console.log(this.mensaje);
+    alert("Error en la autenticación");
     this.ruta.navigate(['/portfolio']);
-  }
-  else {
-    alert('Ingreso incorrecto');
-    this.ruta.navigate(['/portfolio']);
-     }
+  } 
+  );
+  
+  
 }
+
 
 }

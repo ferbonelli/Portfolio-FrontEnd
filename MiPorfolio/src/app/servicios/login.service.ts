@@ -7,17 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
 
-  // Para obtener el estado login
-  url:string="http://localhost:8080/ver/usuarios";
+  // Para autorizar el usuario
+  url:string="http://localhost:8080/";
   
   
 
   constructor(private http:HttpClient) { }
 
-  obtenerCredenciales():Observable<any>{
-    return this.http.get(this.url);
+  public enviarCredenciales(usuario: string, clave: string):Observable<string>{
+    return this.http.get<string>(this.url + `usuario/${usuario}/${clave}`);
     };
-
-     
+      
 
 }
