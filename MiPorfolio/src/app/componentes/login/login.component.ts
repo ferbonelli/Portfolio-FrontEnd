@@ -5,6 +5,7 @@ import { Usuario } from 'src/app/model/usuario.model';
 
 // Importo servicios
 import { LoginService } from 'src/app/servicios/login.service';
+import { UsuarioService } from 'src/app/servicios/usuario.service';
 
 @Component({
   selector: 'app-login',
@@ -17,11 +18,13 @@ export class LoginComponent implements OnInit {
   formularioLogin: FormGroup;
   mensaje: string = '';
   
+  usuarioArray: Usuario[] = [];
   
     
   constructor(private formBuilder:FormBuilder,
               private ruta:Router,
-              private login:LoginService
+              private login:LoginService,
+              private usuario:UsuarioService
     ) { 
 
     this.formularioLogin=this.formBuilder.group(
@@ -33,6 +36,13 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void{
+
+    this.usuario.obtenerUsuarios().subscribe(
+      data => {
+        this.usuarioArray = data;
+                                
+    });
+    
     
   }
   
@@ -50,23 +60,25 @@ onLogin(event: Event){
   this.login.enviarCredenciales(
           this.formularioLogin.value.username,
           this.formularioLogin.value.password
-        ).subscribe(
-    data=>{
-      console.log("paso por acá");
-      this.mensaje=data;
-      console.log(this.mensaje);
-      localStorage.setItem('estado_login','logueado');
-      alert('Te logueaste correctamente');
-      this.ruta.navigate(['/portfolio']);
+        ).subscribe({
+
+          next: data=>{
+            console.log("paso por acá");
+            this.mensaje=data;
+            console.log(this.mensaje);
+            localStorage.setItem('estado_login','logueado');
+            alert('Te logueaste correctamente');
+            this.ruta.navigate(['/portfolio']);
+          },
           
-  }, err =>{
-    console.log(this.mensaje);
-    alert("Error en la autenticación");
-    this.ruta.navigate(['/portfolio']);
-  } 
-  );
-  
-  
+          error: error =>{
+            console.log("Estoy en error");
+            alert("Error en la autenticación");
+            this.ruta.navigate(['/portfolio']);
+          } 
+
+        })
+ 
 }
 
 

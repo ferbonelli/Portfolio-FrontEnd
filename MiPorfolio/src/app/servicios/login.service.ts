@@ -15,8 +15,9 @@ export class LoginService {
   constructor(private http:HttpClient) { }
 
   public enviarCredenciales(usuario: string, clave: string):Observable<any>{
-    return this.http.get<any>(this.url + `usuario/${usuario}/${clave}`);
-    };
-      
+    console.log("en el servicio");
+    return this.http.get<any>(this.url + `usuario/${usuario}/${clave}`) 
+    console.log(this.http.get<any>(this.url + `usuario/${usuario}/${clave}`));
+  }   
 
 }
