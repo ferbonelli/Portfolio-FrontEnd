@@ -5,7 +5,7 @@ import { Usuario } from 'src/app/model/usuario.model';
 
 // Importo servicios
 import { LoginService } from 'src/app/servicios/login.service';
-import { UsuarioService } from 'src/app/servicios/usuario.service';
+
 
 @Component({
   selector: 'app-login',
@@ -24,7 +24,6 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder:FormBuilder,
               private ruta:Router,
               private login:LoginService,
-              private usuario:UsuarioService
     ) { 
 
     this.formularioLogin=this.formBuilder.group(
@@ -35,16 +34,9 @@ export class LoginComponent implements OnInit {
     )
   }
 
-  ngOnInit(): void{
-
-    this.usuario.obtenerUsuarios().subscribe(
-      data => {
-        this.usuarioArray = data;
-                                
-    });
+  ngOnInit(): void{}
+  
     
-    
-  }
   
 
 get Username(){
@@ -56,6 +48,8 @@ get Password() {
 }
  
 onLogin(event: Event){
+  
+
   
   this.login.enviarCredenciales(
           this.formularioLogin.value.username,
@@ -76,10 +70,13 @@ onLogin(event: Event){
             alert("Error en la autenticación");
             this.ruta.navigate(['/portfolio']);
           } 
+          
 
         })
+        
  
 }
+
 
 
 }
