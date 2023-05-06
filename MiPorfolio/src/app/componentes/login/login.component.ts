@@ -52,6 +52,7 @@ onLogin(event: Event){
           this.formularioLogin.value.password
         ).subscribe(
     data=>{
+      console.log("paso por acá");
       this.mensaje=data;
       console.log(this.mensaje);
       localStorage.setItem('estado_login','logueado');

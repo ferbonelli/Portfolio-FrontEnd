@@ -14,8 +14,8 @@ export class LoginService {
 
   constructor(private http:HttpClient) { }
 
-  public enviarCredenciales(usuario: string, clave: string):Observable<string>{
-    return this.http.get<string>(this.url + `usuario/${usuario}/${clave}`);
+  public enviarCredenciales(usuario: string, clave: string):Observable<any>{
+    return this.http.get<any>(this.url + `usuario/${usuario}/${clave}`);
     };
       
 
