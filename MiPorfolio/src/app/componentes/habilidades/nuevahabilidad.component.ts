@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+// Lo necesario para habilidades
 import { Habilidad } from 'src/app/model/habilidad.model';
 import { HabilidadService } from 'src/app/servicios/habilidad.service';
 
@@ -14,22 +17,42 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 })
 export class NuevahabilidadComponent implements OnInit {
 
-  nombre: string = '';
-  porcentaje: number = 0;
+  // Declaraciones
+  formularioHabilidad: FormGroup;
   personaArray: Persona[] = [];
   
-  constructor (private altaHabilidad:HabilidadService,
+  constructor (private formBuilder:FormBuilder,
+              private altaHabilidad:HabilidadService,
                private datosPersona:PersonaService,
                private ruta:Router
-    ) { }
+    ) { 
+      
+      this.formularioHabilidad=this.formBuilder.group(
+        {
+          nombre: ['',[Validators.required]],
+          porcentaje: ['',[Validators.required,Validators.max(100),Validators.min(1)]],
+        }
+      )
+
+    }
 
   ngOnInit(): void {
     this.traerPersona();
   }
 
-  onCreate () {
+  get Nombre(){
+    return this.formularioHabilidad.get('nombre');
+  }
+  
+  get Porcentaje() {
+    return this.formularioHabilidad.get('porcentaje');
+  }
 
-    const nuevaHabilidad= new Habilidad(0,this.nombre,this.porcentaje, this.personaArray[0].id_persona);
+  onCreate (event: Event) {
+
+    const nuevaHabilidad= new Habilidad(0,this.formularioHabilidad.value.nombre,
+                                          this.formularioHabilidad.value.porcentaje,
+                                          this.personaArray[0].id_persona);
     
     this.altaHabilidad.agregarHabilidad(nuevaHabilidad).subscribe(
       data => {

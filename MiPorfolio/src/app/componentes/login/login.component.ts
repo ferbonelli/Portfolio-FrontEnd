@@ -16,8 +16,6 @@ export class LoginComponent implements OnInit {
 
   // Declaraciones
   formularioLogin: FormGroup;
-  mensaje: string = '';
-  
   usuarioArray: Usuario[] = [];
   
     
@@ -54,16 +52,12 @@ onLogin(event: Event){
   this.login.enviarCredenciales(usuarioAutorizar).subscribe({
 
           next: data=>{
-            console.log("paso por acá");
-            this.mensaje=data;
-            console.log(this.mensaje);
             localStorage.setItem('estado_login','logueado');
             alert('Te logueaste correctamente');
             this.ruta.navigate(['/portfolio']);
           },
           
           error: error =>{
-            console.log("Estoy en error");
             alert("Error en la autenticación");
             this.ruta.navigate(['/portfolio']);
           } 

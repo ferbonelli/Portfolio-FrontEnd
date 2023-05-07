@@ -1,14 +1,36 @@
 <h3 class="m-5">Agregar nueva habilidad</h3>
-<div class="m-5 w3-padding w3-border w3-round ws-grey">
-  <div class="mb-3">
+<form [formGroup]="formularioHabilidad" (ngSubmit)="onCreate($event)" class="m-5 w3-padding w3-border w3-round ws-grey">
+  <div  class="form-group" class="mb-3">
     <label for="formGroupExampleInput" class="form-label">Nueva habilidad</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="nombre" >
+    <input type="text" formControlName="nombre" class="form-control" id="formGroupExampleInput" >
+    <div *ngIf="Nombre?.errors && Nombre?.touched">
+      <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+         El Nombre es requerido
+      </p>
+    </div>
+
   </div>
-  <div class="mb-3">
+
+  <div  class="form-group" class="mb-3">
     <label for="formGroupExampleInput2" class="form-label">Porcentaje alcanzado</label>
-    <input type="number" class="form-control" id="formGroupExampleInput2" [(ngModel)]="porcentaje">
+    <input type="number" formControlName="porcentaje" class="form-control" id="formGroupExampleInput2">
+    <div *ngIf="Porcentaje?.errors && Porcentaje?.touched">
+      
+      <p *ngIf="Porcentaje?.hasError('required')" class="text-danger">
+         El Porcentaje es requerido
+      </p>
+
+      <p *ngIf="Porcentaje?.hasError('max')" class="text-danger">
+        El Porcentaje no puede superar el 100 %
+     </p>
+
+     <p *ngIf="Porcentaje?.hasError('min')" class="text-danger">
+      El Porcentaje no puede ser menor a 1 %
+   </p>
+    </div>
+  
   </div>
 
   <br>
-  <button type="button" class="btn btn-primary" (click)="onCreate()">Agregar Habilidad</button>
-</div>
+  <button type="submit" class="btn btn-primary">Agregar Habilidad</button>
+</form>
