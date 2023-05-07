@@ -9,6 +9,10 @@ export class LoginService {
 
   // Para autorizar el usuario
   url:string="http://localhost:8080/";
+
+  httpOptions = {
+    headers : ({'Content-Type': 'application/json'})
+    };
   
   
 
@@ -16,7 +20,7 @@ export class LoginService {
 
   public enviarCredenciales(usuario: string, clave: string):Observable<any>{
     console.log("en el servicio");
-    return this.http.get<any>(this.url + `usuario/${usuario}/${clave}`) 
+    return this.http.post<any>(this.url + `usuario/${usuario}/${clave}`,JSON.stringify(usuario),this.httpOptions) 
     console.log(this.http.get<any>(this.url + `usuario/${usuario}/${clave}`));
   }   
 
