@@ -49,12 +49,9 @@ get Password() {
  
 onLogin(event: Event){
   
-
+  const usuarioAutorizar= new Usuario(0,this.formularioLogin.value.username,this.formularioLogin.value.password, 0);
   
-  this.login.enviarCredenciales(
-          this.formularioLogin.value.username,
-          this.formularioLogin.value.password
-        ).subscribe({
+  this.login.enviarCredenciales(usuarioAutorizar).subscribe({
 
           next: data=>{
             console.log("paso por acá");

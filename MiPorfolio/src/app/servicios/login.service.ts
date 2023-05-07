@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Usuario } from '../model/usuario.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,10 +19,10 @@ export class LoginService {
 
   constructor(private http:HttpClient) { }
 
-  public enviarCredenciales(usuario: string, clave: string):Observable<any>{
+  public enviarCredenciales(usuarioAutorizar: Usuario):Observable<any>{
     console.log("en el servicio");
-    return this.http.post<any>(this.url + `usuario/${usuario}/${clave}`,JSON.stringify(usuario),this.httpOptions) 
-    console.log(this.http.get<any>(this.url + `usuario/${usuario}/${clave}`));
+    return this.http.post<any>(this.url + 'usuario/login',JSON.stringify(usuarioAutorizar),this.httpOptions) 
+    
   }   
 
 }
