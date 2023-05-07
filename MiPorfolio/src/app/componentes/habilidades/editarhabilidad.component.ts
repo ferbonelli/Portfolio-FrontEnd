@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Habilidad } from 'src/app/model/habilidad.model';
 
-// Importo servicios
+
+// Lo necesario para habilidad
+import { Habilidad } from 'src/app/model/habilidad.model';
 import { HabilidadService } from 'src/app/servicios/habilidad.service';
+
+
 
 @Component({
   selector: 'app-editarhabilidad',
@@ -12,18 +16,36 @@ import { HabilidadService } from 'src/app/servicios/habilidad.service';
 })
 export class EditarhabilidadComponent implements OnInit {
 
-habilidadEditar: Habilidad = new Habilidad(0,'',0,1);
+// Declaraciones
+habilidadEditar: Habilidad = new Habilidad(0,'',0,0);
+formularioHabilidad: FormGroup;
 
-constructor(
+constructor( private formBuilder:FormBuilder,
              private datosHabilidad:HabilidadService,
              private rutaActiva:ActivatedRoute,
              private ruta:Router
-){}
+)
+ {
+  this.formularioHabilidad=this.formBuilder.group(
+    {
+      nombre: ['',[Validators.required]],
+      porcentaje: ['',[Validators.required,Validators.max(100),Validators.min(1)]],
+    }
+  )
+ }
 
 ngOnInit(): void {
 
   this.traerHabilidad();
   
+}
+
+get Nombre(){
+  return this.formularioHabilidad.get('nombre');
+}
+
+get Porcentaje() {
+  return this.formularioHabilidad.get('porcentaje');
 }
 
 traerHabilidad() {
@@ -38,10 +60,11 @@ traerHabilidad() {
         alert("Error al modificar la habilidad");
         this.ruta.navigate(['/portfolio']);
       }
-    )
+    );
+
 }
 
-onUpdate() {
+onUpdate(event: Event) {
   
   this.datosHabilidad.actualizarHabilidad(this.habilidadEditar).subscribe(
     data => {
