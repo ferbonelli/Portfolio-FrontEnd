@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/servicios/login.service';
+
 
 @Component({
   selector: 'app-encabezado',
@@ -9,12 +9,10 @@ import { LoginService } from 'src/app/servicios/login.service';
 })
 export class EncabezadoComponent implements OnInit{
 
-  logindatos:any;
   esta_logueado: boolean = false;
   
 
-  constructor(private datosLogin: LoginService,
-              private ruta:Router
+  constructor(private ruta:Router
                ){}
 
   ngOnInit(): void {
@@ -37,9 +35,7 @@ export class EncabezadoComponent implements OnInit{
   }
 
   onlogout(){
-    //localStorage.setItem('estado_login','no_logueado');
     localStorage.removeItem('estado_login')
-    console.log('tiene que cerrar');
     window.location.reload();
 
 
