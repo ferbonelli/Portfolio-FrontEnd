@@ -7,6 +7,7 @@
         <br><br>
         </div>
 
+        <!-- Muestro la lista de proyectos--> 
         <div class="w3-container">
             <ul class="w3-ul w3-card-4 w3-col s8" >
                 <li *ngFor="let proyecto of proyectosArray" class="w3-bar">
@@ -14,10 +15,13 @@
                     
                     <div class="w3-bar-item">
                         <span ><h6>{{proyecto.nombre}}</h6></span>
+                        <!-- Botones de edición y borrado-->
                         <div *ngIf="esta_logueado">
                         <span><a routerLink="/editarproyecto/{{proyecto.id_proyecto}}">
                             <fa-icon [icon]="faPen"></fa-icon></a></span>&nbsp;
-                        <span><fa-icon [icon]="faTrashCan" (click)="onDelete(proyecto.id_proyecto)"></fa-icon></span>
+                        <span><fa-icon [icon]="faTrashCan" data-bs-toggle="modal" data-bs-target="#borrarProyectoModal"
+                            (click)="onOpenModal(proyecto.id_proyecto)"
+                            ></fa-icon></span>
                         <br>
                         </div>
                         <span>{{proyecto.descripcion}}</span><br>
@@ -27,6 +31,27 @@
                 </li>
             </ul>
         </div>
+    
+    <!-- Modal de borrado-->
+    <div class="modal" id="borrarProyectoModal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Confirmar borrado</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>¿ Está seguro de borrar "{{proyectoBorrar.nombre}}" ?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" 
+                          (click)="onDelete(proyectoBorrar.id_proyecto)">Borrar Proyecto</button>
+            </div>
+          </div>
+        </div>
+      <!-- Fin del modal de boorado-->
+
     </div>
 <br>
 </div>

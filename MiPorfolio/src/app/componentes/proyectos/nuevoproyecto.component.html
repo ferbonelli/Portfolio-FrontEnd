@@ -1,35 +1,69 @@
 <h3 class="m-5">Agregar un nuevo proyecto</h3>
-<div class="m-5 w3-padding w3-border w3-round ws-grey">
+<form [formGroup]="formularioProyecto" (ngSubmit)="onCreate($event)" class="m-5 w3-padding w3-border w3-round ws-grey">
 
   <div class="col-md-6">
     <label for="formGroupExampleInput" class="form-label">Nombre del proyecto</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="nombre" >
+    <input type="text" class="form-control" id="formGroupExampleInput" formControlName="nombre" >
+    <div *ngIf="Nombre?.errors && Nombre?.touched">
+      <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+         El nombre del proyecto es requerido
+      </p>
+    </div>
   </div>
   
   <div class="col-12">
     <label for="formGroupExampleInput" class="form-label">Descripción del proyecto</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="descripcion">
+    <input type="text" class="form-control" id="formGroupExampleInput" formControlName="descripcion">
+    <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+      <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+         La descripcion es requerida
+      </p>
+    </div>
   </div>
 
   <div class="row g-3">
       <div class="col-md-6">
         <label for="formGroupExampleInput" class="form-label">Fecha de inicio</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="fecha_inicio" >
+        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="fecha_inicio" >
+        <div *ngIf="Fecha_inicio?.errors && Fecha_inicio?.touched">
+          <p *ngIf="Fecha_inicio?.hasError('required')" class="text-danger">
+             La fecha de inicio es requerida
+          </p>
+
+          <p *ngIf="Fecha_inicio?.hasError('pattern')" class="text-danger">
+            El formato debe ser dd/mm/aaaa
+         </p>
+        </div>
       </div>
+
       <div class="col-md-6">
         <label for="formGroupExampleInput" class="form-label">Fecha de finalización</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="fecha_final" >
+        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="fecha_final" >
+        <div *ngIf="Fecha_final?.errors && Fecha_final?.touched">
+          <p *ngIf="Fecha_final?.hasError('required')" class="text-danger">
+             La fecha final es requerida
+          </p>
+
+          <p *ngIf="Fecha_final?.hasError('pattern')" class="text-danger">
+            El formato debe ser dd/mm/aaaa
+         </p>
+        </div>
       </div>
   </div>
   
   
   <div class="col-12">
     <label for="formGroupExampleInput" class="form-label">url de la imagen</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="url_proyecto" >
+    <input type="text" class="form-control" id="formGroupExampleInput" formControlName="url_proyecto" >
+    <div *ngIf="Url_proyecto?.errors && Url_proyecto?.touched">
+      <p *ngIf="Url_proyecto?.hasError('required')" class="text-danger">
+         La url del proyecto es requerida
+      </p>
+    </div>
   </div>
 
   <div class="col-12">
     <br>
-    <button type="button" class="btn btn-primary" (click)="onCreate()">Agregar Proyecto</button>
+    <button type="submit" class="btn btn-primary" >Agregar Proyecto</button>
   </div>
-</div>
+</form>
