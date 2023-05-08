@@ -79,12 +79,12 @@ onUpdate(event: Event) {
   
   this.datosEducacion.actualizarEducacion(this.educacionEditar).subscribe({
     next: data => {
-      alert("Se actualizó Educación");
+      alert("Se actualizó el curso");
       this.ruta.navigate(['/portfolio']);
     }, 
     
     error: error =>{
-       alert("Error al modificar Educación");
+       alert("Error al modificar el curso");
        this.ruta.navigate(['/portfolio']);
     }
   })

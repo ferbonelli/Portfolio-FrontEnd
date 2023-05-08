@@ -78,7 +78,7 @@ export class NuevaeducacionComponent implements OnInit {
                                           this.formularioEducacion.value.fecha_final,
                                           this.personaArray[0].id_persona);
       
-    console.log(nuevaEducacion);
+    
     
     this.altaEducacion.agregarEducacion(nuevaEducacion).subscribe({
       next: data => {
