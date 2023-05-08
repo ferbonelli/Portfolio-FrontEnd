@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Habilidad } from 'src/app/model/habilidad.model';
+import { Router } from '@angular/router';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
-// Importo servicios
+// Lo necesito para habilidad
 import { HabilidadService } from 'src/app/servicios/habilidad.service';
+import { Habilidad } from 'src/app/model/habilidad.model';
 
 @Component({
   selector: 'app-habilidades',
@@ -21,7 +22,8 @@ export class HabilidadesComponent implements OnInit {
   faTrashCan=faTrashCan;
 
   constructor(
-              private datosHabilidad:HabilidadService
+              private datosHabilidad:HabilidadService,
+              private ruta:Router
     ) {}
 
   ngOnInit(): void {
@@ -50,25 +52,34 @@ export class HabilidadesComponent implements OnInit {
     
     if(id != undefined){
 
-      this.datosHabilidad.borrarHabilidad(id).subscribe(
-        data => {
+      this.datosHabilidad.borrarHabilidad(id).subscribe({
+        
+        next: data => {
           alert("Se borró la habilidad correctamente")
           this.mostrarHabilidades();
-        }, err => {
+        },
+        
+        error: error => {
           alert("No se pudo borrar la habilidad");
+          this.ruta.navigate(['/portfolio']);
         }
-      )
+    })
     }
   }
 
   onOpenModal(id?: number) {
 
     if(id != undefined){
-      this.datosHabilidad.obtenerHabilidad(id).subscribe(
-        data =>{
-          this.habilidadBorrar = data;
-                    
-        })
+      this.datosHabilidad.obtenerHabilidad(id).subscribe({
+        next: data =>{
+          this.habilidadBorrar = data;      
+        },
+
+        error: error=>{
+          alert("No se pudo borrar la habilidad");
+          this.ruta.navigate(['/portfolio']);
+        }
+      })
     }
     
    }

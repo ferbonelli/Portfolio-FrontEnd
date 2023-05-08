@@ -15,6 +15,7 @@
                 <div class="card-body">
                     
                     <div><span><h5>{{habilidades.nombre}}</h5></span>
+                      <!-- Botenes de edición y borrado-->
                       <div *ngIf="esta_logueado">
                         <span><a routerLink="/editarhabilidad/{{habilidades.id_habilidad}}">
                         <fa-icon [icon]="faPen"></fa-icon></a></span>&nbsp;
@@ -55,7 +56,7 @@
             </div>
           </div>
         </div>
-      <!-- Fin del modal-->
+      <!-- Fin del modal de boorado-->
 
       </div>
  </div>

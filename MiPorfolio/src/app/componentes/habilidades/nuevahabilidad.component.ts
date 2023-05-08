@@ -54,15 +54,17 @@ export class NuevahabilidadComponent implements OnInit {
                                           this.formularioHabilidad.value.porcentaje,
                                           this.personaArray[0].id_persona);
     
-    this.altaHabilidad.agregarHabilidad(nuevaHabilidad).subscribe(
-      data => {
+    this.altaHabilidad.agregarHabilidad(nuevaHabilidad).subscribe({
+      next: data => {
         alert("Se agregó una nueva habilidad");
         this.ruta.navigate(['/portfolio']);
-      }, err => {
+      }, 
+      
+      error: error => {
         alert("No se pudo agregar habilidad debido a un error");
         this.ruta.navigate(['/portfolio']);
       }
-    )
+  })
   }
 
   traerPersona() :void{
