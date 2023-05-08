@@ -66,15 +66,17 @@ traerHabilidad() {
 
 onUpdate(event: Event) {
   
-  this.datosHabilidad.actualizarHabilidad(this.habilidadEditar).subscribe(
-    data => {
+  this.datosHabilidad.actualizarHabilidad(this.habilidadEditar).subscribe({
+    next: data => {
       alert("Se actualizó la habilidad");
       this.ruta.navigate(['/portfolio']);
-    }, err =>{
+    }, 
+    
+    error: error =>{
        alert("Error al modificar la habilidad");
        this.ruta.navigate(['/portfolio']);
     }
-  )
+    })
 
 }
 
