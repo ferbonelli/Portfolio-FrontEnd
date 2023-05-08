@@ -1,36 +1,77 @@
 <h3 class="m-5">Editar curso</h3>
-<div class="m-5 w3-padding w3-border w3-round ws-grey">
+<form [formGroup]="formularioEducacion" (ngSubmit)="onUpdate($event)" class="m-5 w3-padding w3-border w3-round ws-grey">
 
   <div class="col-md-6">
     <label for="formGroupExampleInput" class="form-label">Nombre del curso</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="educacionEditar.institucion" >
+    <input type="text" class="form-control" id="formGroupExampleInput" 
+    [(ngModel)]="educacionEditar.institucion" formControlName="institucion">
+    <div *ngIf="Institucion?.errors && Institucion?.touched">
+      <p *ngIf="Institucion?.hasError('required')" class="text-danger">
+         La institución es requerida
+      </p>
+    </div>
   </div>
   
   <div class="col-12">
     <label for="formGroupExampleInput" class="form-label">Titulo otorgado</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="educacionEditar.titulo">
+    <input type="text" class="form-control" id="formGroupExampleInput" 
+    [(ngModel)]="educacionEditar.titulo" formControlName="titulo">
+    <div *ngIf="Titulo?.errors && Titulo?.touched">
+      <p *ngIf="Titulo?.hasError('required')" class="text-danger">
+         El titulo otrogado es requerido
+      </p>
+    </div>
   </div>
 
   <div class="row g-3">
       <div class="col-md-6">
         <label for="formGroupExampleInput" class="form-label">Fecha de inicio</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="educacionEditar.fecha_inicio" >
+        <input type="text" class="form-control" id="formGroupExampleInput" 
+        [(ngModel)]="educacionEditar.fecha_inicio" formControlName="fecha_inicio">
+        <div *ngIf="Fecha_inicio?.errors && Fecha_inicio?.touched">
+          <p *ngIf="Fecha_inicio?.hasError('required')" class="text-danger">
+             La fecha de inicio es requerida
+          </p>
+
+          <p *ngIf="Fecha_inicio?.hasError('pattern')" class="text-danger">
+            El formato debe ser dd/mm/aaaa
+         </p>
+
+        </div>
       </div>
+      
       <div class="col-md-6">
         <label for="formGroupExampleInput" class="form-label">Fecha de finalización</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="educacionEditar.fecha_final" >
+        <input type="text" class="form-control" id="formGroupExampleInput" 
+        [(ngModel)]="educacionEditar.fecha_final" formControlName="fecha_final">
+        <div *ngIf="Fecha_final?.errors && Fecha_final?.touched">
+          <p *ngIf="Fecha_final?.hasError('required')" class="text-danger">
+             La fecha final es requerida
+          </p>
+
+          <p *ngIf="Fecha_inicio?.hasError('pattern')" class="text-danger">
+            El formato debe ser dd/mm/aaaa
+         </p>
+         
+        </div>
       </div>
   </div>
   
   
   <div class="col-12">
     <label for="formGroupExampleInput" class="form-label">url del logo de la institución</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="educacionEditar.url_logoinst" >
+    <input type="text" class="form-control" id="formGroupExampleInput" 
+    [(ngModel)]="educacionEditar.url_logoinst" formControlName="url_logoinst">
+    <div *ngIf="Url_logoinst?.errors && Url_logoinst?.touched">
+      <p *ngIf="Url_logoinst?.hasError('required')" class="text-danger">
+         La url del logo es requrida
+      </p>
+    </div>
   </div>
 
   <div class="col-12">
     <br>
-    <button type="button" class="btn btn-primary" (click)="onUpdate()">Actualizar curso</button>
+    <button type="submit" class="btn btn-primary">Actualizar curso</button>
   </div>
-</div>
+</form>
 
