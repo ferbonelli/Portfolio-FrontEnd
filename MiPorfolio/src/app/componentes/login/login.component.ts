@@ -62,7 +62,6 @@ onLogin(event: Event){
             this.ruta.navigate(['/portfolio']);
           } 
           
-
         })
         
  
