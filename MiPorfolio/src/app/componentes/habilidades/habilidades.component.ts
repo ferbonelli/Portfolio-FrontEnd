@@ -15,6 +15,7 @@ export class HabilidadesComponent implements OnInit {
 
   // Declaraciones
   habilidadesArray: Habilidad[] = [];
+  habilidadBorrar: Habilidad = new Habilidad(0,'',0,0);
   esta_logueado: boolean = false;
   faPen=faPen;
   faTrashCan=faTrashCan;
@@ -58,8 +59,18 @@ export class HabilidadesComponent implements OnInit {
         }
       )
     }
-
-          
   }
+
+  onOpenModal(id?: number) {
+
+    if(id != undefined){
+      this.datosHabilidad.obtenerHabilidad(id).subscribe(
+        data =>{
+          this.habilidadBorrar = data;
+                    
+        })
+    }
+    
+   }
 
 }
