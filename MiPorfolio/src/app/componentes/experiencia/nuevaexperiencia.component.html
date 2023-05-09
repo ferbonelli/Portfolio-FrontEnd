@@ -1,40 +1,80 @@
 <h3 class="m-5">Agregar un nueva experiencia laboral</h3>
-<div class="m-5 w3-padding w3-border w3-round ws-grey">
+<form [formGroup]="formularioExperiencia" (ngSubmit)="onCreate($event)"  class="m-5 w3-padding w3-border w3-round ws-grey">
 
   <div class="col-md-6">
     <label for="formGroupExampleInput" class="form-label">Nombre de empresa</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="empresa" >
+    <input type="text" class="form-control" id="formGroupExampleInput" formControlName="empresa" >
+    <div *ngIf="Empresa?.errors && Empresa?.touched">
+      <p *ngIf="Empresa?.hasError('required')" class="text-danger">
+         La empresa es requerida
+      </p>
+    </div>
   </div>
   
   <div class="col-12">
     <label for="formGroupExampleInput" class="form-label">Puesto</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="puesto">
+    <input type="text" class="form-control" id="formGroupExampleInput" formControlName="puesto">
+    <div *ngIf="Puesto?.errors && Puesto?.touched">
+      <p *ngIf="Puesto?.hasError('required')" class="text-danger">
+         El puesto es requerido
+      </p>
+    </div>
   </div>
 
   <div class="col-12">
     <label for="formGroupExampleInput" class="form-label">Descripción de tareas del Puesto</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="descripcion">
+    <input type="text" class="form-control" id="formGroupExampleInput" formControlName="descripcion">
+    <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+      <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+         La descripción es requerida
+      </p>
+    </div>
   </div>
 
   <div class="row g-3">
       <div class="col-md-6">
         <label for="formGroupExampleInput" class="form-label">Fecha de inicio</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="fecha_desde" >
+        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="fecha_desde" >
+        <div *ngIf="Fecha_desde?.errors && Fecha_desde?.touched">
+          <p *ngIf="Fecha_desde?.hasError('required')" class="text-danger">
+             La fecha de comienzo es requerida
+          </p>
+
+          <p *ngIf="Fecha_desde?.hasError('pattern')" class="text-danger">
+            El formato debe ser dd/mm/aaaa
+         </p>
+        </div>
       </div>
       <div class="col-md-6">
         <label for="formGroupExampleInput" class="form-label">Fecha de finalización</label>
-        <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="fecha_hasta" >
+        <input type="text" class="form-control" id="formGroupExampleInput" formControlName="fecha_hasta" >
+        <div *ngIf="Fecha_hasta?.errors && Fecha_hasta?.touched">
+          <p *ngIf="Fecha_hasta?.hasError('required')" class="text-danger">
+             La fecha final es requerida
+          </p>
+
+          <p *ngIf="Fecha_hasta?.hasError('pattern')" class="text-danger">
+            El formato debe ser dd/mm/aaaa
+         </p>
+        </div>
+
       </div>
   </div>
   
   
   <div class="col-12">
     <label for="formGroupExampleInput" class="form-label">url del logo de la empresa</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="url_logo" >
+    <input type="text" class="form-control" id="formGroupExampleInput" formControlName="url_logo" >
+    <div *ngIf="Url_logo?.errors && Url_logo?.touched">
+      <p *ngIf="Url_logo?.hasError('required')" class="text-danger">
+         La url del logo es requerida
+      </p>
+    </div>
+    
   </div>
 
   <div class="col-12">
     <br>
-    <button type="button" class="btn btn-primary" (click)="onCreate()">Agregar curso</button>
+    <button type="submit" class="btn btn-primary" >Agregar Nueva experiencia</button>
   </div>
-</div>
+</form>

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Experiencia } from 'src/app/model/experiencia.model';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-// Importo servicios
+// Lo necesito para la sección de Experiencia
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
+import { Experiencia } from 'src/app/model/experiencia.model';
 
 @Component({
   selector: 'app-editarexperiencia',
@@ -12,16 +13,59 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 })
 export class EditarexperienciaComponent implements OnInit{
   
-  experienciaEditar: Experiencia = new Experiencia(0,'','','','','','',1);
+  // Declaraciones
+  formularioExperiencia: FormGroup;
+  experienciaEditar: Experiencia = new Experiencia(0,'','','','','','',0);
 
-  constructor(
+  constructor(private formBuilder:FormBuilder,
               private datosExperiencia:ExperienciaService,
               private rutaActiva:ActivatedRoute,
               private ruta:Router
-  ){}
+            ){
+              this.formularioExperiencia=this.formBuilder.group(
+                {
+                  empresa: ['',[Validators.required]],
+                  puesto: ['',[Validators.required]],
+                  descripcion: ['',[Validators.required]],
+                  url_logo: ['',[Validators.required]],
+                  fecha_desde: ['',[Validators.required,
+                    Validators.pattern (/^(0?[1-9]|[12][0-9]|3[01])[\/-](0?[1-9]|1[012])[\/-]\d{4}$/)
+                    ]],
+                  fecha_hasta: ['',[Validators.required,
+                    Validators.pattern (/^(0?[1-9]|[12][0-9]|3[01])[\/-](0?[1-9]|1[012])[\/-]\d{4}$/)
+                    ]],
+                }
+              )
+            }
 
+
+            
   ngOnInit(): void {
     this.traerExperiencia();
+  }
+
+  get Empresa(){
+    return this.formularioExperiencia.get('empresa');
+  }
+  
+  get Puesto() {
+    return this.formularioExperiencia.get('puesto');
+  }
+
+  get Descripcion() {
+    return this.formularioExperiencia.get('descripcion');
+  }
+
+  get Url_logo() {
+    return this.formularioExperiencia.get('url_logo');
+  }
+
+  get Fecha_desde(){
+    return this.formularioExperiencia.get('fecha_desde');
+  }
+  
+  get Fecha_hasta() {
+    return this.formularioExperiencia.get('fecha_hasta');
   }
 
   traerExperiencia() {
@@ -30,26 +74,22 @@ export class EditarexperienciaComponent implements OnInit{
       this.datosExperiencia.obtenerExperiencia(id).subscribe(
         data =>{
           this.experienciaEditar = data;
-          
-          
-        }, err =>{
-          alert("Error al modificar la experiencia");
-          this.ruta.navigate(['/portfolio']);
-        }
+          }
       )
   }
   
-  onUpdate() {
+  onUpdate(event: Event) {
     
-    this.datosExperiencia.actualizarExperiencia(this.experienciaEditar).subscribe(
-      data => {
+    this.datosExperiencia.actualizarExperiencia(this.experienciaEditar).subscribe({
+      next: data => {
         alert("Se actualizó la expriencia");
         this.ruta.navigate(['/portfolio']);
-      }, err =>{
+      }, 
+      error: error =>{
          alert("Error al modificar la experiencia");
          this.ruta.navigate(['/portfolio']);
       }
-    )
+  })
   
   }
 }

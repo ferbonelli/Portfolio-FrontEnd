@@ -78,8 +78,7 @@ export class NuevaeducacionComponent implements OnInit {
                                           this.formularioEducacion.value.fecha_final,
                                           this.personaArray[0].id_persona);
       
-    
-    
+        
     this.altaEducacion.agregarEducacion(nuevaEducacion).subscribe({
       next: data => {
         alert("Se agregó un nuevo curso");

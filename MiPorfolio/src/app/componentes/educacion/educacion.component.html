@@ -20,9 +20,8 @@
                         <span><a routerLink="/editareducacion/{{educacion.id_educacion}}">
                             <fa-icon [icon]="faPen"></fa-icon></a></span>&nbsp;
                         <span><fa-icon [icon]="faTrashCan" data-bs-toggle="modal" data-bs-target="#borrarEducacionModal"
-                            (click)="onOpenModal(educacion.id_educacion)" 
-                            
-                            ></fa-icon></span>
+                            (click)="onOpenModal(educacion.id_educacion)" >
+                          </fa-icon></span>
                         <br>
                         </div>
                         <span>{{educacion.titulo}}</span><br>
@@ -51,8 +50,6 @@
           </div>
         </div>
       <!-- Fin del modal de boorado-->
-
-    
-    
+       
     </div>
 </div>
