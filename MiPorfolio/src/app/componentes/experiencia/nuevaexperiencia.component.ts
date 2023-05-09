@@ -23,7 +23,6 @@ personaArray: Persona[] = [];
 esactual: boolean = false;
 
 
-
   constructor(private formBuilder:FormBuilder,
               private altaExperiencia:ExperienciaService,
               private datosPersona:PersonaService,
@@ -75,6 +74,11 @@ esactual: boolean = false;
   }
     
     onCreate (event: Event) {
+
+      if (this.esactual)
+      {
+        this.formularioExperiencia.value.fecha_hasta='Actualidad';
+      }
 
       const nuevaExperiencia= new Experiencia(0,
                                           this.formularioExperiencia.value.empresa,
