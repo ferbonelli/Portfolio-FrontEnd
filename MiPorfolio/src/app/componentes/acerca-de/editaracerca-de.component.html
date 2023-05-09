@@ -5,6 +5,10 @@
     <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="personaEditar.acerca_de" >
   </div>
   
-  <button type="button" class="btn btn-primary" (click)="onUpdate()">Actualizar Acerca de</button>
+  <div class="d-grid gap-2 d-md-block">
+  <button type="button" class="btn btn-primary" style="margin: 10px" (click)="onUpdate()">Actualizar Acerca de</button>
+  <a routerLink="/portfolio">
+    <button type="button" class="btn btn-dark">Volver al portfolio</button></a>
+  </div>
 </div>
 
