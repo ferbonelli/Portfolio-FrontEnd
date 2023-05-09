@@ -51,6 +51,19 @@
       </div>
       
       <div class="col-md-6">
+
+        <!-- Si es actual-->
+        <div *ngIf="esactual, else elseBlock">
+          <fieldset disabled>
+          <label  for="disabledTextInput" class="form-label">Fecha de finalización</label>
+          <input type="text" class="form-control" id="disabledTextInput" 
+             value="Actualidad" placeholder="Actualidad"
+            formControlName="fecha_hasta" >
+          </fieldset>
+          </div>
+
+        <!-- Si no es actual-->
+        <ng-template #elseBlock>
         <label for="formGroupExampleInput" class="form-label">Fecha de finalización</label>
         <input type="text" class="form-control" id="formGroupExampleInput" 
                  [(ngModel)]="experienciaEditar.fecha_hasta" formControlName="fecha_hasta">
@@ -63,6 +76,19 @@
           El formato debe ser dd/mm/aaaa
         </p>
         </div>
+      </ng-template>
+
+      <!-- Checkbox si está editando esperiencia actual (sino da error formato cuando toco
+        fecha de finalización)-->
+      <div class="form-check">
+        <input  type="checkbox" 
+        [(ngModel)]="esactual" 
+          formControlName="trabajoactual" >
+        <label class="form-check-label" for="trabajoactual">
+        ¿Es trabajo actual?
+        </label>
+      </div>
+
       </div>
   </div>
   
@@ -78,9 +104,11 @@
     </div>
   </div>
 
-  <div class="col-12">
+  <div class="d-grid gap-2 d-md-block col-12">
     <br>
-    <button type="submit" class="btn btn-primary" >Actualizar curso</button>
+    <button type="submit" class="btn btn-primary" style="margin: 10px">Actualizar curso</button>
+    <a routerLink="/portfolio">
+      <button type="button" class="btn btn-dark">Volver al portfolio</button></a>
   </div>
 </form>
 

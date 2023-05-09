@@ -16,6 +16,7 @@ export class EditarexperienciaComponent implements OnInit{
   // Declaraciones
   formularioExperiencia: FormGroup;
   experienciaEditar: Experiencia = new Experiencia(0,'','','','','','',0);
+  esactual: boolean = false;
 
   constructor(private formBuilder:FormBuilder,
               private datosExperiencia:ExperienciaService,
@@ -34,6 +35,7 @@ export class EditarexperienciaComponent implements OnInit{
                   fecha_hasta: ['',[Validators.required,
                     Validators.pattern (/^(0?[1-9]|[12][0-9]|3[01])[\/-](0?[1-9]|1[012])[\/-]\d{4}$/)
                     ]],
+                    trabajoactual: [null,[]],
                 }
               )
             }
@@ -80,6 +82,10 @@ export class EditarexperienciaComponent implements OnInit{
   
   onUpdate(event: Event) {
     
+    if (this.esactual)
+      {
+        this.experienciaEditar.fecha_hasta='Actualidad';
+      }
     this.datosExperiencia.actualizarExperiencia(this.experienciaEditar).subscribe({
       next: data => {
         alert("Se actualizó la expriencia");
