@@ -45,7 +45,20 @@
          </p>
         </div>
       </div>
+      
+      
       <div class="col-md-6">
+
+        <!-- Si es actual-->
+        <div *ngIf="esactual, else elseBlock">
+        <fieldset disabled>
+        <label  for="disabledTextInput" class="form-label">Fecha de finalización</label>
+        <input type="text" class="form-control" id="disabledTextInput"  formControlName="fecha_hasta" >
+        </fieldset>
+        </div>
+        
+        <!-- Si no es actual-->
+        <ng-template #elseBlock>
         <label for="formGroupExampleInput" class="form-label">Fecha de finalización</label>
         <input type="text" class="form-control" id="formGroupExampleInput" formControlName="fecha_hasta" >
         <div *ngIf="Fecha_hasta?.errors && Fecha_hasta?.touched">
@@ -57,6 +70,7 @@
             El formato debe ser dd/mm/aaaa
          </p>
         </div>
+      </ng-template>
 
         <!-- Probando checkbox-->
         <div class="form-check">
@@ -68,11 +82,7 @@
           </label>
         </div>
 
-        
-          <div *ngIf="esactual">
-          <p> Es un trabajo actual </p>
-        </div>
-         
+              
       
       
       </div>
