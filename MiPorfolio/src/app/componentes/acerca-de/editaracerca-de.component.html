@@ -1,14 +1,20 @@
 <h3 class="m-5">Modificar acerca de</h3>
-<div class="m-5 w3-padding w3-border w3-round ws-grey">
+<form [formGroup]="formularioAcercade" (ngSubmit)="onUpdate($event)" class="m-5 w3-padding w3-border w3-round ws-grey">
   <div class="mb-3">
     <label for="formGroupExampleInput" class="form-label">Modificar acerca de</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="personaEditar.acerca_de" >
+    <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="personaEditar.acerca_de"
+    formControlName="acercade" >
+    <div *ngIf="Acercade?.errors && Acercade?.touched">
+      <p *ngIf="Acercade?.hasError('required')" class="text-danger">
+         El texto es requerido
+      </p>
+    </div>
   </div>
   
   <div class="d-grid gap-2 d-md-block">
-  <button type="button" class="btn btn-primary" style="margin: 10px" (click)="onUpdate()">Actualizar Acerca de</button>
+  <button type="submit" class="btn btn-primary" style="margin: 10px">Actualizar Acerca de</button>
   <a routerLink="/portfolio">
     <button type="button" class="btn btn-dark">Volver al portfolio</button></a>
   </div>
-</div>
+</form>
 

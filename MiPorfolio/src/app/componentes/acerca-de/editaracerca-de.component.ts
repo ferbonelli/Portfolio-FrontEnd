@@ -1,9 +1,11 @@
 import { Component,OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Persona } from 'src/app/model/persona.model';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-// Importo servicios
+
+// Lo necesito para los datos de la persona
 import { PersonaService } from 'src/app/servicios/persona.service';
+import { Persona } from 'src/app/model/persona.model';
 
 
 @Component({
@@ -13,18 +15,30 @@ import { PersonaService } from 'src/app/servicios/persona.service';
 })
 export class EditaracercaDeComponent implements OnInit{
 
+  // Declaraciones
   personaEditar: Persona = new Persona(0,'','','','','','','','','');
+  formularioAcercade: FormGroup;
   
 
-  constructor(
-    private datosPersona:PersonaService,
-    private rutaActiva:ActivatedRoute,
-    private ruta:Router
-){}
+  constructor(private formBuilder:FormBuilder,
+              private datosPersona:PersonaService,
+              private rutaActiva:ActivatedRoute,
+              private ruta:Router
+             ){
+              this.formularioAcercade=this.formBuilder.group(
+                {
+                  acercade: ['',[Validators.required]],
+                }
+              )
+             }
 
 ngOnInit(): void {
   this.traerPersona();
   
+}
+
+get Acercade(){
+  return this.formularioAcercade.get('acercade');
 }
 
 traerPersona() {
@@ -34,25 +48,23 @@ traerPersona() {
   this.datosPersona.obtenerPersona(id).subscribe(
     data =>{
       this.personaEditar = data;
-            
-    }, err =>{
-      alert("Error al modificar acerca de");
-      this.ruta.navigate(['/portfolio']);
-    }
+    }  
+    
   )
 }
 
-onUpdate() {
+onUpdate(event: Event) {
   
-  this.datosPersona.actualizarPersona(this.personaEditar).subscribe(
-    data => {
+  this.datosPersona.actualizarPersona(this.personaEditar).subscribe({
+    next: data => {
       alert("Se actualizó acerca de");
       this.ruta.navigate(['/portfolio']);
-    }, err =>{
+    },
+    error: error =>{
        alert("Error al modificar acerca de");
        this.ruta.navigate(['/portfolio']);
     }
-  )
+  })
 
 }
 
