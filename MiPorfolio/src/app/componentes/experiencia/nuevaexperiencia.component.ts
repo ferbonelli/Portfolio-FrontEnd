@@ -104,6 +104,10 @@ esactual: boolean = false;
        
   }
 
+  onBack(): void {
+    this.ruta.navigate(['/portfolio']);
+  }
+
   traerPersona() :void{
 
     this.datosPersona.obtenerPersonas().subscribe(
