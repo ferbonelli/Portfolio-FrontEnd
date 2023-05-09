@@ -20,6 +20,9 @@ export class NuevaexperienciaComponent implements OnInit{
 // Declaraciones
 formularioExperiencia: FormGroup;
 personaArray: Persona[] = [];
+esactual: boolean = false;
+
+
 
   constructor(private formBuilder:FormBuilder,
               private altaExperiencia:ExperienciaService,
@@ -38,7 +41,8 @@ personaArray: Persona[] = [];
                   fecha_hasta: ['',[Validators.required,
                     Validators.pattern (/^(0?[1-9]|[12][0-9]|3[01])[\/-](0?[1-9]|1[012])[\/-]\d{4}$/)
                     ]],
-                }
+                  trabajoactual: [null,[]],
+                  }
               )
              }
 

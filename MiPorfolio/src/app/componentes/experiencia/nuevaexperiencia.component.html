@@ -58,7 +58,26 @@
          </p>
         </div>
 
+        <!-- Probando checkbox-->
+        <div class="form-check">
+          <input  type="checkbox" 
+          [(ngModel)]="esactual" 
+            formControlName="trabajoactual" >
+          <label class="form-check-label" for="trabajoactual">
+          ¿Es trabajo actual? {{esactual}}
+          </label>
+        </div>
+
+        
+          <div *ngIf="esactual">
+          <p> Es un trabajo actual </p>
+        </div>
+         
+      
+      
       </div>
+     
+      
   </div>
   
   
