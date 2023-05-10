@@ -70,26 +70,36 @@ export class NuevaeducacionComponent implements OnInit {
 
   onCreate (event: Event) {
 
-    const nuevaEducacion= new Educacion(0,
-                                        this.formularioEducacion.value.institucion,
-                                          this.formularioEducacion.value.titulo,
-                                          this.formularioEducacion.value.url_logoinst,
-                                          this.formularioEducacion.value.fecha_inicio,
-                                          this.formularioEducacion.value.fecha_final,
-                                          this.personaArray[0].id_persona);
-      
-        
-    this.altaEducacion.agregarEducacion(nuevaEducacion).subscribe({
-      next: data => {
-        alert("Se agregó un nuevo curso");
-        this.ruta.navigate(['/portfolio']);
-      }, 
-      
-      error: error => {
-        alert("No se pudo agregar ek nuevo curso debido a un error");
+    this.formularioEducacion.markAllAsTouched();
+    this.formularioEducacion.updateValueAndValidity();
+
+    if( this.formularioEducacion.valid )
+       {
+        const nuevaEducacion= new Educacion(0,
+                                            this.formularioEducacion.value.institucion,
+                                              this.formularioEducacion.value.titulo,
+                                              this.formularioEducacion.value.url_logoinst,
+                                              this.formularioEducacion.value.fecha_inicio,
+                                              this.formularioEducacion.value.fecha_final,
+                                              this.personaArray[0].id_persona);
+          
+            
+        this.altaEducacion.agregarEducacion(nuevaEducacion).subscribe({
+          next: data => {
+            alert("Se agregó un nuevo curso");
+            this.ruta.navigate(['/portfolio']);
+          }, 
+          
+          error: error => {
+            alert("No se pudo agregar ek nuevo curso debido a un error");
+            this.ruta.navigate(['/portfolio']);
+          }
+        })
+       }
+       else{
+        alert('No se puede grabar formulario con campos vacios');
         this.ruta.navigate(['/portfolio']);
       }
-    })
     
   }
 
