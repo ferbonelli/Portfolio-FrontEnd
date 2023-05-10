@@ -50,21 +50,32 @@ export class NuevahabilidadComponent implements OnInit {
 
   onCreate (event: Event) {
 
-    const nuevaHabilidad= new Habilidad(0,this.formularioHabilidad.value.nombre,
-                                          this.formularioHabilidad.value.porcentaje,
-                                          this.personaArray[0].id_persona);
+    this.formularioHabilidad.markAllAsTouched();
+    this.formularioHabilidad.updateValueAndValidity();
+
+    if( this.formularioHabilidad.valid )
+       {
+          const nuevaHabilidad= new Habilidad(0,this.formularioHabilidad.value.nombre,
+          this.formularioHabilidad.value.porcentaje,
+          this.personaArray[0].id_persona);
+
+            this.altaHabilidad.agregarHabilidad(nuevaHabilidad).subscribe({
+            next: data => {
+            alert("Se agregó una nueva habilidad");
+            this.ruta.navigate(['/portfolio']);
+            }, 
+
+            error: error => {
+            alert("No se pudo agregar habilidad debido a un error");
+            this.ruta.navigate(['/portfolio']);
+            }
+            })
+       }
     
-    this.altaHabilidad.agregarHabilidad(nuevaHabilidad).subscribe({
-      next: data => {
-        alert("Se agregó una nueva habilidad");
-        this.ruta.navigate(['/portfolio']);
-      }, 
-      
-      error: error => {
-        alert("No se pudo agregar habilidad debido a un error");
-        this.ruta.navigate(['/portfolio']);
-      }
-  })
+     else{
+      alert('No se puede grabar formulario con campos vacios');
+      this.ruta.navigate(['/portfolio']);
+    }
   }
 
   traerPersona() :void{
