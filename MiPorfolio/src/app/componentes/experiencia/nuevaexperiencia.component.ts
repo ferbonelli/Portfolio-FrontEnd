@@ -79,7 +79,7 @@ esactual: boolean = false;
       {
         this.formularioExperiencia.value.fecha_hasta='Actualidad';
       }
-
+      
       const nuevaExperiencia= new Experiencia(0,
                                           this.formularioExperiencia.value.empresa,
                                           this.formularioExperiencia.value.puesto,
@@ -89,24 +89,35 @@ esactual: boolean = false;
                                           this.formularioExperiencia.value.fecha_hasta,
                                           this.personaArray[0].id_persona);
         
-                      
-      this.altaExperiencia.agregarExperiencia(nuevaExperiencia).subscribe({
-        next: data => {
-          alert("Se agregó una nueva experiencia");
-          this.ruta.navigate(['/portfolio']);
-        }, 
-        
-        error: error => {
-          alert("No se pudo agregar la experiencia debido a un error");
-          this.ruta.navigate(['/portfolio']);
-        }
-    })
+      if (this.verificarNoVacio(this.formularioExperiencia.value.empresa,
+                        this.formularioExperiencia.value.puesto,
+                        this.formularioExperiencia.value.descripcion,
+                        this.formularioExperiencia.value.url_logo,
+                        this.formularioExperiencia.value.fecha_desde,
+                        this.formularioExperiencia.value.fecha_hasta))
+                        
+            {
+                this.altaExperiencia.agregarExperiencia(nuevaExperiencia).subscribe({
+                  next: data => {
+                    alert("Se agregó una nueva experiencia");
+                    this.ruta.navigate(['/portfolio']);
+                  }, 
+                  
+                  error: error => {
+                    alert("No se pudo agregar la experiencia debido a un error");
+                    this.ruta.navigate(['/portfolio']);
+                  }
+              });
+            }
+            else 
+               {
+                alert('No se puede grabar formulario con campos vacios');
+                this.ruta.navigate(['/portfolio']);
+               };
        
-  }
+    }
 
-  onBack(): void {
-    this.ruta.navigate(['/portfolio']);
-  }
+  
 
   traerPersona() :void{
 
@@ -116,5 +127,18 @@ esactual: boolean = false;
                                 
     })
   }
+
+  verificarNoVacio(empresa: string, puesto: string, descripcion: string,
+                 url_logo: string, fecha_desde: string, fecha_hasta:string) : boolean
+      {
+      
+       if (empresa != '' && puesto != '' && descripcion != '' &&
+          url_logo != '' && fecha_desde!= '' && fecha_hasta != '')
+
+            {return true;}
+          
+           else {return false;}
+      }
+    
 
 }
