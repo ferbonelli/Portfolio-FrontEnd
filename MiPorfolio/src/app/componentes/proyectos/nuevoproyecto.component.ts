@@ -68,26 +68,36 @@ export class NuevoproyectoComponent implements OnInit  {
 
   onCreate (event: Event) {
 
-    const nuevoProyecto= new Proyecto(0,
-                                      this.formularioProyecto.value.nombre,
-                                          this.formularioProyecto.value.descripcion,
-                                          this.formularioProyecto.value.url_proyecto,
-                                          this.formularioProyecto.value.fecha_inicio,
-                                          this.formularioProyecto.value.fecha_final,
-                                          this.personaArray[0].id_persona);
-      
+    this.formularioProyecto.markAllAsTouched();
+    this.formularioProyecto.updateValueAndValidity();
+
+    if( this.formularioProyecto.valid )
+       {
+        const nuevoProyecto= new Proyecto(0,
+                                          this.formularioProyecto.value.nombre,
+                                              this.formularioProyecto.value.descripcion,
+                                              this.formularioProyecto.value.url_proyecto,
+                                              this.formularioProyecto.value.fecha_inicio,
+                                              this.formularioProyecto.value.fecha_final,
+                                              this.personaArray[0].id_persona);
           
-    this.altaProyecto.agregarProyecto(nuevoProyecto).subscribe({
-      next: data => {
-        alert("Se agregó una nuevo proyecto");
-        this.ruta.navigate(['/portfolio']);
-      }, 
-      
-      error: error => {
-        alert("No se pudo agregar el proyecto debido a un error");
+              
+        this.altaProyecto.agregarProyecto(nuevoProyecto).subscribe({
+          next: data => {
+            alert("Se agregó una nuevo proyecto");
+            this.ruta.navigate(['/portfolio']);
+          }, 
+          
+          error: error => {
+            alert("No se pudo agregar el proyecto debido a un error");
+            this.ruta.navigate(['/portfolio']);
+          }
+        })
+       }
+       else{
+        alert('No se puede grabar formulario con campos vacios');
         this.ruta.navigate(['/portfolio']);
       }
-     })
     
   }
 
