@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/enviroments.prod';
 import { Proyecto } from '../model/proyecto.model';
 
 
@@ -9,7 +10,8 @@ import { Proyecto } from '../model/proyecto.model';
 })
 export class ProyectoService {
 
-  url:string="http://localhost:8080/";
+  url: string =environment.apiURL;
+
   httpOptions = {
     headers : ({'Content-Type': 'application/json'})
     };

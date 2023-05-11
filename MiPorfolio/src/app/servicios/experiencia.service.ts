@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/enviroments.prod';
 import { Experiencia } from '../model/experiencia.model';
 
 @Injectable({
@@ -8,7 +9,8 @@ import { Experiencia } from '../model/experiencia.model';
 })
 export class ExperienciaService {
 
-  url:string="http://localhost:8080/";
+  url: string =environment.apiURL;
+  
   httpOptions = {
     headers : ({'Content-Type': 'application/json'})
     };
