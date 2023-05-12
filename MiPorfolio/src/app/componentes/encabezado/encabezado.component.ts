@@ -37,7 +37,6 @@ export class EncabezadoComponent implements OnInit{
   onlogout(){
     localStorage.removeItem('estado_login');
     alert('Te desconectaste correctamente');
-    this.ruta.navigate(['']);
     window.location.reload();
     
 
