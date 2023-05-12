@@ -16,6 +16,7 @@ import { EditarbannerComponent } from './componentes/banner/editarbanner.compone
 
 
 const routes: Routes = [
+
 {path:'portfolio', component:MiportfolioComponent},
 {path:'login', component:LoginComponent},
 {path:'nuevahabilidad', component:NuevahabilidadComponent},
@@ -30,6 +31,8 @@ const routes: Routes = [
 {path:'editarbanner/:id', component:EditarbannerComponent},
 
 {path:'', component:MiportfolioComponent,pathMatch: 'full'},
+
+
 ];
 
 @NgModule({
