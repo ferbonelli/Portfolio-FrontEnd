@@ -38,10 +38,7 @@ export class EncabezadoComponent implements OnInit{
     localStorage.removeItem('estado_login');
     alert('Te desconectaste correctamente');
     window.location.reload();
-    
-
-
-            
+                
   }
 
 
